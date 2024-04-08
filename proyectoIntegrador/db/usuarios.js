@@ -8,11 +8,14 @@ const usuarios={
     },
     productos:[
         {
+        imagen:'',
+        nombreDelProducto:'',
+        descripcion: '',
         comentarios:[{
             nombreDeUsuario: '',
             textoDelComentario:'',
             imagenDePerfil:'agregar link de la carpeta del protecto'
-        }]
+        }],
     } ],
 }
 

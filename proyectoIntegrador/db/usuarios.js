@@ -9,7 +9,7 @@ const usuarios={
     productos:[
         {
         imagen:'/images/products/buzo.png',
-        nombreDelProducto:'',
+        nombreDelProducto:'Remers Nike',
         descripcion: 'Remera Nike sportswear mujer algodón 100%',
         comentarios:[{
             nombreDeUsuario: '',
@@ -19,14 +19,88 @@ const usuarios={
         },
         {
             imagen:'/images/products/jeanMujer.png',
-            nombreDelProducto:'',
+            nombreDelProducto:'Mom Jeans',
             descripcion: 'Mini Mom Jeans material denim azul oscuro',
             comentarios:[{
                 nombreDeUsuario: '',
                 textoDelComentario:'',
                 imagenDePerfil:'agregar link de la carpeta del protecto'
             }],
-        } ],
+        },{
+            imagen:'',
+            nombreDelProducto:'',
+            descripcion: '',
+            comentarios:[{
+                nombreDeUsuario: '',
+                textoDelComentario:'',
+                imagenDePerfil:'agregar link de la carpeta del protecto'
+            }],
+        },{
+            imagen:'',
+            nombreDelProducto:'',
+            descripcion: '',
+            comentarios:[{
+                nombreDeUsuario: '',
+                textoDelComentario:'',
+                imagenDePerfil:'agregar link de la carpeta del protecto'
+            }],
+        },{
+            imagen:'',
+            nombreDelProducto:'',
+            descripcion: '',
+            comentarios:[{
+                nombreDeUsuario: '',
+                textoDelComentario:'',
+                imagenDePerfil:'agregar link de la carpeta del protecto'
+            }],
+        },{
+            imagen:'',
+            nombreDelProducto:'',
+            descripcion: '',
+            comentarios:[{
+                nombreDeUsuario: '',
+                textoDelComentario:'',
+                imagenDePerfil:'agregar link de la carpeta del protecto'
+            }],
+        },{
+            imagen:'',
+            nombreDelProducto:'',
+            descripcion: '',
+            comentarios:[{
+                nombreDeUsuario: '',
+                textoDelComentario:'',
+                imagenDePerfil:'agregar link de la carpeta del protecto'
+            }],
+        },{
+            imagen:'',
+            nombreDelProducto:'',
+            descripcion: '',
+            comentarios:[{
+                nombreDeUsuario: '',
+                textoDelComentario:'',
+                imagenDePerfil:'agregar link de la carpeta del protecto'
+            }],
+        },{
+            imagen:'',
+            nombreDelProducto:'',
+            descripcion: '',
+            comentarios:[{
+                nombreDeUsuario: '',
+                textoDelComentario:'',
+                imagenDePerfil:'agregar link de la carpeta del protecto'
+            }],
+        },{
+            imagen:'',
+            nombreDelProducto:'',
+            descripcion: '',
+            comentarios:[{
+                nombreDeUsuario: '',
+                textoDelComentario:'',
+                imagenDePerfil:'agregar link de la carpeta del protecto'
+            }],
+        }, ]
+        
+        
       
 }
 

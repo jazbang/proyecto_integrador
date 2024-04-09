@@ -15,7 +15,8 @@ const usuarios={
             nombreDeUsuario: '',
             textoDelComentario:'',
             imagenDePerfil:'agregar link de la carpeta del protecto'
-        }],
+        }]
+        },
         {
             imagen:'/images/products/jeanMujer.png',
             nombreDelProducto:'',
@@ -26,7 +27,7 @@ const usuarios={
                 imagenDePerfil:'agregar link de la carpeta del protecto'
             }],
         } ],
-        
+      
 }
 
 module.exports=usuarios;

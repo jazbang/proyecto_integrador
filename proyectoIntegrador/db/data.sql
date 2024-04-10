@@ -56,34 +56,34 @@ INSERT INTO usuarios
 VALUES(DEFAULT, 'estimiedziak@gmail.com', '183km/h208feline', '2004-02-26', 46352190, '/images/users/user5.png', NULL, NULL, NULL);
 
 INSERT INTO productos
-VALUES(DEFAULT, 'https://www.solodeportes.com.ar/remera-nike-sportswear-mujer-blanca.html', 'Remera', 'Remera Nike sportswear unisex algodón 100%', NULL, NULL, NULL, DEFAULT);
+VALUES(DEFAULT, '/images/products/remera.png', 'Remera', 'Remera Nike sportswear unisex algodón 100%', NULL, NULL, NULL, DEFAULT);
 
 INSERT INTO productos
-VALUES(DEFAULT, 'https://www.levi.com.ar/mini-mom-jeans-kids-41d524m0n0/p?idsku=12740&gad_source=1&gclid=Cj0KCQjwq86wBhDiARIsAJhuphn4Wvjx_-MXvGUxG9B-3lLki0VOYCKAQlgnDX-0cly3YTntDOjf81gaAigWEALw_wcB', 'Jean', 'Mom jeans denim azul oscuro.', NULL, NULL, NULL, DEFAULT);
+VALUES(DEFAULT, '/images/products/jeanMujer.png', 'Jean', 'Mom jeans denim azul oscuro.', NULL, NULL, NULL, DEFAULT);
 
 INSERT INTO productos
-VALUES(DEFAULT, 'https://elpatiovintage.com/productos/buzo-canguro-essentials-blanco/', 'Buzo', 'Buzo tipo hoodie blanco algodón 100%', NULL, NULL, NULL, DEFAULT);
+VALUES(DEFAULT, '/images/products/buzo.png', 'Buzo', 'Buzo tipo hoodie blanco algodón 100%', NULL, NULL, NULL, DEFAULT);
 
 INSERT INTO productos
-VALUES(DEFAULT, 'https://eu.boohoo.com/hawaii-ringer-baby-tee/GZZ58700.html', 'Top', 'Top blanco y rosa con estampa 100% algodón.', NULL, NULL, NULL, DEFAULT);
+VALUES(DEFAULT, '/images/products/babytee.png', 'Top', 'Top blanco y rosa con estampa 100% algodón.', NULL, NULL, NULL, DEFAULT);
 
 INSERT INTO productos
-VALUES(DEFAULT, 'https://urbanamar.com.ar/productos/mini-mandy-se-despacha-el-17-02/', 'Pollera', 'Pollera denim upcycling reversionado.', NULL, NULL, NULL, DEFAULT);
+VALUES(DEFAULT, '/images/products/polleraJean.png', 'Pollera', 'Pollera denim upcycling reversionado.', NULL, NULL, NULL, DEFAULT);
 
 INSERT INTO productos
-VALUES(DEFAULT, 'file:///Users/jazminbang/Desktop/Captura%20de%20pantalla%202024-04-08%20a%20las%2020.08.42.png', 'Campera', 'Campera negra puffer de The North Face.', NULL, NULL, NULL, DEFAULT);
+VALUES(DEFAULT, '/images/products/campera.png', 'Campera', 'Campera negra puffer de The North Face.', NULL, NULL, NULL, DEFAULT);
 
 INSERT INTO productos
-VALUES(DEFAULT, 'https://www.safra.store/productos/musculosa-morley-basica/', 'Musculosa', 'Musculosa básica negra morely.', NULL, NULL, NULL, DEFAULT);
+VALUES(DEFAULT, '/images/products/musculosa.png', 'Musculosa', 'Musculosa básica negra morely.', NULL, NULL, NULL, DEFAULT);
 
 INSERT INTO productos
-VALUES(DEFAULT, 'https://www.yesstyle.com/en/ronin-baggy-cargo-pants/info.html/pid.1115870952', 'Parachuttes', 'Pantalón parachutte verde militar.', NULL, NULL, NULL, DEFAULT);
+VALUES(DEFAULT, '/images/products/parachutte.png', 'Parachuttes', 'Pantalón parachutte verde militar.', NULL, NULL, NULL, DEFAULT);
 
 INSERT INTO productos
-VALUES(DEFAULT, 'https://www.zara.com/us/en/oversized-blazer-p02753132.html?v1=324594439&v2=2352684', 'Saco', 'Saco negro de vestir.', NULL, NULL, NULL, DEFAULT);
+VALUES(DEFAULT, '/images/products/blazer.png', 'Saco', 'Saco negro de vestir.', NULL, NULL, NULL, DEFAULT);
 
 INSERT INTO productos
-VALUES(DEFAULT, 'https://www.kazuma.com.ar/productos/bermuda-jean-beagle/?variant=735770985&pf=mc&gad_source=1&gclid=Cj0KCQjwq86wBhDiARIsAJhuphnje-qWKyRg0i5sVGeDFT-w_Urlgn7XI94JpohmS4jgFbsEbrXOtSIaAl9REALw_wcB', 'Bermuda', 'Bermuda de jean azul.', NULL, NULL, NULL, DEFAULT);
+VALUES(DEFAULT, '/images/products/bermuda.png', 'Bermuda', 'Bermuda de jean azul.', NULL, NULL, NULL, DEFAULT);
 
 INSERT INTO comentarios
 VALUES(DEFAULT, 1, DEFAULT, 'Muy buena calidad.', NULL, NULL, NULL);

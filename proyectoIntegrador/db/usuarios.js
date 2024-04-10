@@ -14,7 +14,7 @@ const usuarios={
         comentarios:[{
             nombreDeUsuario: 'matiasfernandez',
             textoDelComentario:'Muy buena calidad.',
-            imagenDePerfil:'file:///var/folders/9l/ngx1v7v17x76cy3h1yk5bw1r0000gn/T/TemporaryItems/NSIRD_screencaptureui_RSnJjt/Captura%20de%20pantalla%202024-04-08%20a%20la(s)%2017.37.52.png'
+            imagenDePerfil:'/images/users/user2.png'
         }]
         },
         {
@@ -24,7 +24,7 @@ const usuarios={
             comentarios:[{
                 nombreDeUsuario: 'karinarodriguez',
                 textoDelComentario:'Volvería a comprar definitivamente.',
-                imagenDePerfil:'file:///var/folders/9l/ngx1v7v17x76cy3h1yk5bw1r0000gn/T/TemporaryItems/NSIRD_screencaptureui_SeTzjm/Captura%20de%20pantalla%202024-04-08%20a%20la(s)%2017.38.28.png'
+                imagenDePerfil:'/images/users/user3.png'
             }],
         },{
             imagen:'/imagenes/products/babytee.png',
@@ -33,7 +33,7 @@ const usuarios={
             comentarios:[{
                 nombreDeUsuario: 'omardiaz',
                 textoDelComentario:'Recomiendo totalmente.',
-                imagenDePerfil:'file:///var/folders/9l/ngx1v7v17x76cy3h1yk5bw1r0000gn/T/TemporaryItems/NSIRD_screencaptureui_aZv94S/Captura%20de%20pantalla%202024-04-08%20a%20la(s)%2017.42.14.png'
+                imagenDePerfil:'/images/users/user4.png'
             }],
         },{
             imagen:'/imagenes/products/buzo.png',
@@ -42,16 +42,16 @@ const usuarios={
             comentarios:[{
                 nombreDeUsuario: 'javierestevan',
                 textoDelComentario:'Muy sofisticado.',
-                imagenDePerfil:'file:///var/folders/9l/ngx1v7v17x76cy3h1yk5bw1r0000gn/T/TemporaryItems/NSIRD_screencaptureui_ERfY5S/Captura%20de%20pantalla%202024-04-10%20a%20la(s)%2011.48.38.png'
+                imagenDePerfil:'/images/users/user2.png'
             }],
         },{
             imagen:'/imagenes/products/polleraJean.png',
             nombreDelProducto:' Pollera',
             descripcion: 'Pollera denim upcycling reversionado.',
             comentarios:[{
-                nombreDeUsuario: 'micaelabili',
+                nombreDeUsuario: 'martinaperez',
                 textoDelComentario:'Muy comoda.',
-                imagenDePerfil:'file:///var/folders/9l/ngx1v7v17x76cy3h1yk5bw1r0000gn/T/TemporaryItems/NSIRD_screencaptureui_0d8TdY/Captura%20de%20pantalla%202024-04-10%20a%20la(s)%2011.34.04.png'
+                imagenDePerfil:'/images/users/user1.png'
             }],
         },{
             imagen:'/imagenes/products/campera.png',
@@ -60,7 +60,7 @@ const usuarios={
             comentarios:[{
                 nombreDeUsuario: 'estimiedziak',
                 textoDelComentario:'La mejor calidad.',
-                imagenDePerfil:'file:///var/folders/9l/ngx1v7v17x76cy3h1yk5bw1r0000gn/T/TemporaryItems/NSIRD_screencaptureui_tGl6lp/Captura%20de%20pantalla%202024-04-08%20a%20la(s)%2017.44.12.png'
+                imagenDePerfil:'/images/users/user5.png'
             }],
         },{
             imagen:'/imagenes/products/musculosa.png',
@@ -69,7 +69,7 @@ const usuarios={
             comentarios:[{
                 nombreDeUsuario: 'andrearasligui',
                 textoDelComentario:'Me encantó el material.',
-                imagenDePerfil:'file:///var/folders/9l/ngx1v7v17x76cy3h1yk5bw1r0000gn/T/TemporaryItems/NSIRD_screencaptureui_QGvZCz/Captura%20de%20pantalla%202024-04-10%20a%20la(s)%2011.35.08.png'
+                imagenDePerfil:'/images/users/user5.png'
             }],
         },{
             imagen:'/imagenes/products/parachutte.png',
@@ -78,7 +78,7 @@ const usuarios={
             comentarios:[{
                 nombreDeUsuario: 'biancadelre',
                 textoDelComentario:'Divino el color.',
-                imagenDePerfil:'file:///var/folders/9l/ngx1v7v17x76cy3h1yk5bw1r0000gn/T/TemporaryItems/NSIRD_screencaptureui_Oh85Da/Captura%20de%20pantalla%202024-04-10%20a%20la(s)%2011.36.16.png'
+                imagenDePerfil:'/images/users/user1.png'
             }],
         },{
             imagen:'/imagenes/products/saco.png',
@@ -87,7 +87,7 @@ const usuarios={
             comentarios:[{
                 nombreDeUsuario: 'valeriagonzales',
                 textoDelComentario:'Me encanta el material, muy comodo.',
-                imagenDePerfil:'file:///var/folders/9l/ngx1v7v17x76cy3h1yk5bw1r0000gn/T/TemporaryItems/NSIRD_screencaptureui_Z8fnHe/Captura%20de%20pantalla%202024-04-10%20a%20la(s)%2011.37.20.png'
+                imagenDePerfil:'/images/users/user3.png'
             }],
         },{
             imagen:'/imagenes/products/bermuda.png',
@@ -96,7 +96,7 @@ const usuarios={
             comentarios:[{
                 nombreDeUsuario: 'juanlopez',
                 textoDelComentario:'Recomiendo.',
-                imagenDePerfil:'file:///var/folders/9l/ngx1v7v17x76cy3h1yk5bw1r0000gn/T/TemporaryItems/NSIRD_screencaptureui_DnE8vH/Captura%20de%20pantalla%202024-04-10%20a%20la(s)%2011.38.39.png'
+                imagenDePerfil:'/images/users/user5.png'
             }],
         }, ]
         

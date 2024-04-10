@@ -40,9 +40,9 @@ const usuarios={
             nombreDelProducto:'Buzo',
             descripcion: 'Buzo tipo hoodie blanco algodón 100%.',
             comentarios:[{
-                nombreDeUsuario: '',
-                textoDelComentario:'',
-                imagenDePerfil:'agregar link de la carpeta del protecto'
+                nombreDeUsuario: 'javierestevan',
+                textoDelComentario:'Muy sofisticado.',
+                imagenDePerfil:'file:///var/folders/9l/ngx1v7v17x76cy3h1yk5bw1r0000gn/T/TemporaryItems/NSIRD_screencaptureui_ERfY5S/Captura%20de%20pantalla%202024-04-10%20a%20la(s)%2011.48.38.png'
             }],
         },{
             imagen:'/imagenes/products/polleraJean.png',

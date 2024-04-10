@@ -41,19 +41,19 @@ FOREIGN KEY (id_usuarios) REFERENCES usuarios(id)
 );
 
 INSERT INTO usuarios
-VALUES(DEFAULT, 'martinaperez@gmail.com', 'martina2004', '2004-02-26', 46442731, 'file:///var/folders/x_/fjxqkm4d7zz4f1vr4k3wccd40000gn/T/TemporaryItems/NSIRD_screencaptureui_n2B35S/Captura%20de%20pantalla%202024-04-08%20a%20las%2017.32.53.png', NULL, NULL, NULL);
+VALUES(DEFAULT, 'martinaperez@gmail.com', 'martina2004', '2004-02-26', 46442731, '/images/users/user1.png', NULL, NULL, NULL);
 
 INSERT INTO usuarios
-VALUES(DEFAULT, 'matiasfernandez@gmail.com', 'mati2499', '2002-07-12', 44289064, 'file:///var/folders/9l/ngx1v7v17x76cy3h1yk5bw1r0000gn/T/TemporaryItems/NSIRD_screencaptureui_RSnJjt/Captura%20de%20pantalla%202024-04-08%20a%20la(s)%2017.37.52.png', NULL, NULL, NULL);
+VALUES(DEFAULT, 'matiasfernandez@gmail.com', 'mati2499', '2002-07-12', 44289064, '/images/users/user2.png', NULL, NULL, NULL);
 
 INSERT INTO usuarios
-VALUES(DEFAULT, 'karinarodriguez@gmail.com', 'jack2019', '1974-04-10', 23522718, 'file:///var/folders/9l/ngx1v7v17x76cy3h1yk5bw1r0000gn/T/TemporaryItems/NSIRD_screencaptureui_SeTzjm/Captura%20de%20pantalla%202024-04-08%20a%20la(s)%2017.38.28.png', NULL, NULL, NULL);
+VALUES(DEFAULT, 'karinarodriguez@gmail.com', 'jack2019', '1974-04-10', 23522718, '/images/users/user3.png', NULL, NULL, NULL);
 
 INSERT INTO usuarios
-VALUES(DEFAULT, 'omardiaz@gmail.com', '1970omi', '1972-11-02', 22290456, 'file:///var/folders/9l/ngx1v7v17x76cy3h1yk5bw1r0000gn/T/TemporaryItems/NSIRD_screencaptureui_aZv94S/Captura%20de%20pantalla%202024-04-08%20a%20la(s)%2017.42.14.png', NULL, NULL, NULL);
+VALUES(DEFAULT, 'omardiaz@gmail.com', '1970omi', '1972-11-02', 22290456, '/images/users/user4.png', NULL, NULL, NULL);
 
 INSERT INTO usuarios
-VALUES(DEFAULT, 'estimiedziak@gmail.com', '183km/h208feline', '2004-02-26', 46352190, 'file:///var/folders/9l/ngx1v7v17x76cy3h1yk5bw1r0000gn/T/TemporaryItems/NSIRD_screencaptureui_tGl6lp/Captura%20de%20pantalla%202024-04-08%20a%20la(s)%2017.44.12.png', NULL, NULL, NULL);
+VALUES(DEFAULT, 'estimiedziak@gmail.com', '183km/h208feline', '2004-02-26', 46352190, '/images/users/user5.png', NULL, NULL, NULL);
 
 INSERT INTO productos
 VALUES(DEFAULT, 'https://www.solodeportes.com.ar/remera-nike-sportswear-mujer-blanca.html', 'Remera', 'Remera Nike sportswear unisex algodón 100%', NULL, NULL, NULL, DEFAULT);

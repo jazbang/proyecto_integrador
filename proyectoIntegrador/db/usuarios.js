@@ -9,8 +9,8 @@ const usuarios={
     productos:[
         {
         imagen:'/images/products/buzo.png',
-        nombreDelProducto:'Remers Nike',
-        descripcion: 'Remera Nike sportswear mujer algodón 100%',
+        nombreDelProducto:'Remera Nike',
+        descripcion: 'Remera Nike sportswear unisex algodón 100%.',
         comentarios:[{
             nombreDeUsuario: '',
             textoDelComentario:'',
@@ -20,7 +20,7 @@ const usuarios={
         {
             imagen:'/images/products/jeanMujer.png',
             nombreDelProducto:'Mom Jeans',
-            descripcion: 'Mini Mom Jeans material denim azul oscuro',
+            descripcion: 'Mom jeans denim azul oscuro',
             comentarios:[{
                 nombreDeUsuario: '',
                 textoDelComentario:'',
@@ -28,8 +28,8 @@ const usuarios={
             }],
         },{
             imagen:'/imagenes/products/babytee.png',
-            nombreDelProducto:'Baby Tee',
-            descripcion: 'Hawaii Ringer Baby Tee Pink',
+            nombreDelProducto:'Top',
+            descripcion: 'Top blanco y rosa con estampa 100% algodón.',
             comentarios:[{
                 nombreDeUsuario: '',
                 textoDelComentario:'',
@@ -37,8 +37,8 @@ const usuarios={
             }],
         },{
             imagen:'/imagenes/products/buzo.png',
-            nombreDelProducto:' Buzo Essentials',
-            descripcion: 'Buzo Essentials blanco algodón 100%',
+            nombreDelProducto:'Buzo',
+            descripcion: 'Buzo tipo hoodie blanco algodón 100%.',
             comentarios:[{
                 nombreDeUsuario: '',
                 textoDelComentario:'',
@@ -46,8 +46,8 @@ const usuarios={
             }],
         },{
             imagen:'/imagenes/products/polleraJean.png',
-            nombreDelProducto:' Pollera de Jean',
-            descripcion: 'Pollera de Jean personalizada negra con tachas',
+            nombreDelProducto:' Pollera',
+            descripcion: 'Pollera denim upcycling reversionado.',
             comentarios:[{
                 nombreDeUsuario: '',
                 textoDelComentario:'',
@@ -55,8 +55,35 @@ const usuarios={
             }],
         },{
             imagen:'/imagenes/products/campera.png',
-            nombreDelProducto:'Campera The North Face',
-            descripcion: 'Campera nefra puffer de The North Face unisex',
+            nombreDelProducto:'Campera',
+            descripcion: 'Campera negra puffer de The North Face.',
+            comentarios:[{
+                nombreDeUsuario: '',
+                textoDelComentario:'',
+                imagenDePerfil:'agregar link de la carpeta del protecto'
+            }],
+        },{
+            imagen:'/imagenes/products/musculosa.png',
+            nombreDelProducto:'Musculosa',
+            descripcion: 'Musculosa básica negra morely.',
+            comentarios:[{
+                nombreDeUsuario: '',
+                textoDelComentario:'',
+                imagenDePerfil:'agregar link de la carpeta del protecto'
+            }],
+        },{
+            imagen:'/imagenes/products/parachutte.png',
+            nombreDelProducto:'Parachuttes',
+            descripcion: 'Pantalón parachutte verde militar.',
+            comentarios:[{
+                nombreDeUsuario: '',
+                textoDelComentario:'',
+                imagenDePerfil:'agregar link de la carpeta del protecto'
+            }],
+        },{
+            imagen:'/imagenes/products/saco.png',
+            nombreDelProducto:'Saco',
+            descripcion: 'Saco negro de vestir.',
             comentarios:[{
                 nombreDeUsuario: '',
                 textoDelComentario:'',
@@ -65,34 +92,7 @@ const usuarios={
         },{
             imagen:'/imagenes/products/bermuda.png',
             nombreDelProducto:'Bermudas de Jean',
-            descripcion: '',
-            comentarios:[{
-                nombreDeUsuario: '',
-                textoDelComentario:'',
-                imagenDePerfil:'agregar link de la carpeta del protecto'
-            }],
-        },{
-            imagen:'',
-            nombreDelProducto:'',
-            descripcion: '',
-            comentarios:[{
-                nombreDeUsuario: '',
-                textoDelComentario:'',
-                imagenDePerfil:'agregar link de la carpeta del protecto'
-            }],
-        },{
-            imagen:'',
-            nombreDelProducto:'',
-            descripcion: '',
-            comentarios:[{
-                nombreDeUsuario: '',
-                textoDelComentario:'',
-                imagenDePerfil:'agregar link de la carpeta del protecto'
-            }],
-        },{
-            imagen:'',
-            nombreDelProducto:'',
-            descripcion: '',
+            descripcion: 'Bermuda de jean azul.',
             comentarios:[{
                 nombreDeUsuario: '',
                 textoDelComentario:'',

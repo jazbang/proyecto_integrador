@@ -62,7 +62,7 @@ INSERT INTO productos
 VALUES(DEFAULT, 'https://www.levi.com.ar/mini-mom-jeans-kids-41d524m0n0/p?idsku=12740&gad_source=1&gclid=Cj0KCQjwq86wBhDiARIsAJhuphn4Wvjx_-MXvGUxG9B-3lLki0VOYCKAQlgnDX-0cly3YTntDOjf81gaAigWEALw_wcB', 'Jean', 'Mom jeans denim azul oscuro.', NULL, NULL, NULL, DEFAULT);
 
 INSERT INTO productos
-VALUES(DEFAULT, 'https://elpatiovintage.com/productos/buzo-canguro-essentials-blanco/', 'Buzo', 'Buzo tipo hoodie blanco algón 100%', NULL, NULL, NULL, DEFAULT);
+VALUES(DEFAULT, 'https://elpatiovintage.com/productos/buzo-canguro-essentials-blanco/', 'Buzo', 'Buzo tipo hoodie blanco algodón 100%', NULL, NULL, NULL, DEFAULT);
 
 INSERT INTO productos
 VALUES(DEFAULT, 'https://eu.boohoo.com/hawaii-ringer-baby-tee/GZZ58700.html', 'Top', 'Top blanco y rosa con estampa 100% algodón.', NULL, NULL, NULL, DEFAULT);

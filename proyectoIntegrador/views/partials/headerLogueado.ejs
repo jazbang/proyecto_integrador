@@ -1,6 +1,6 @@
 const express= require('express');
 const router= express.Router();
-const usuarios= require('../db/usuarios');
+const db= require('../db/usuarios');
 
 <header class="main-header">
 	<div class="container">
@@ -38,7 +38,7 @@ const usuarios= require('../db/usuarios');
 	
 			<ul class="right-navbar">
 				<li><a href="/profile.ejs">
-						<%= usuarios.usuario %> <i class="fas fa-user"></i>
+						<%= db.usuario %> <i class="fas fa-user"></i>
 					</a>
 				</li>
 				<li>

@@ -3,7 +3,7 @@ const db = require('../db/usuarios.js')
 
 const productController = {
     index: function(req, res, next) {
-        res.render('index', { data: db })
+        res.render('index', {product: db.productos})
     },
     products: function(req,res){
         res.render('product', {product: db.productos})

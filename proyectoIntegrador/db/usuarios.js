@@ -93,7 +93,7 @@ const usuarios={
                 imagenDePerfil:'/images/users/user1.png'
             }],
         },{
-            imagen:'/images/products/saco.png',
+            imagen:'/images/products/blazer.png',
             nombreDelProducto:'Saco',
             descripcion: 'Saco negro de vestir.',
             comentarios:[{

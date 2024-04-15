@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const productController = require('../controllers/productController')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -7,13 +8,9 @@ router.get('/', function(req, res, next) {
 });
 
 //router.get('/', productController.index);
-//router.get('/login', productController.login);
-//router.get('/product', productController.productos);
+router.get('/product', productController.products);
 //router.get('/resultadosDeBusqueda', productController.resultadosDeBusqueda);
-//router.get('/register', productController.register);
-//router.get('/profile', productController.profile);
-//router.get('/profileEdit', productController.editar);
-//router.get('/addProduct', productController.producto);
+router.get('/add', productController.agregarProducto);
 
 
 module.exports = router;

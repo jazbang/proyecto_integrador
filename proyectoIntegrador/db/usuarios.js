@@ -27,7 +27,7 @@ const usuarios={
                 imagenDePerfil:'/images/users/user3.png'
             }],
         },{
-            imagen:'/imagenes/products/babytee.png',
+            imagen:'/images/products/babytee.png',
             nombreDelProducto:'Top',
             descripcion: 'Top blanco y rosa con estampa 100% algodón.',
             comentarios:[{
@@ -36,16 +36,27 @@ const usuarios={
                 imagenDePerfil:'/images/users/user4.png'
             }],
         },{
-            imagen:'/imagenes/products/buzo.png',
+            imagen:'/images/products/buzo.png',
             nombreDelProducto:'Buzo',
             descripcion: 'Buzo tipo hoodie blanco algodón 100%.',
             comentarios:[{
-                nombreDeUsuario: 'javierestevan',
-                textoDelComentario:'Muy sofisticado.',
+                nombreDeUsuario: 'matifernandez',
+                textoDelComentario:'Recomiendo totalmente.',
                 imagenDePerfil:'/images/users/user2.png'
-            }],
+            },
+            {
+                nombreDeUsuario: 'estimiedziak',
+                textoDelComentario:'Volvería a comprar definitivamente.',
+                imagenDePerfil:'/images/users/user5.png'
+            },
+            {
+                nombreDeUsuario: 'martinaperez',
+                textoDelComentario:'Muy suave el material. Me encanta.',
+                imagenDePerfil:'/images/users/user1.png'
+            }
+            ],
         },{
-            imagen:'/imagenes/products/polleraJean.png',
+            imagen:'/images/products/polleraJean.png',
             nombreDelProducto:' Pollera',
             descripcion: 'Pollera denim upcycling reversionado.',
             comentarios:[{
@@ -54,7 +65,7 @@ const usuarios={
                 imagenDePerfil:'/images/users/user1.png'
             }],
         },{
-            imagen:'/imagenes/products/campera.png',
+            imagen:'/images/products/campera.png',
             nombreDelProducto:'Campera',
             descripcion: 'Campera negra puffer de The North Face.',
             comentarios:[{
@@ -63,7 +74,7 @@ const usuarios={
                 imagenDePerfil:'/images/users/user5.png'
             }],
         },{
-            imagen:'/imagenes/products/musculosa.png',
+            imagen:'/images/products/musculosa.png',
             nombreDelProducto:'Musculosa',
             descripcion: 'Musculosa básica negra morely.',
             comentarios:[{
@@ -72,7 +83,7 @@ const usuarios={
                 imagenDePerfil:'/images/users/user5.png'
             }],
         },{
-            imagen:'/imagenes/products/parachutte.png',
+            imagen:'/images/products/parachutte.png',
             nombreDelProducto:'Parachuttes',
             descripcion: 'Pantalón parachutte verde militar.',
             comentarios:[{
@@ -81,7 +92,7 @@ const usuarios={
                 imagenDePerfil:'/images/users/user1.png'
             }],
         },{
-            imagen:'/imagenes/products/saco.png',
+            imagen:'/images/products/saco.png',
             nombreDelProducto:'Saco',
             descripcion: 'Saco negro de vestir.',
             comentarios:[{
@@ -90,7 +101,7 @@ const usuarios={
                 imagenDePerfil:'/images/users/user3.png'
             }],
         },{
-            imagen:'/imagenes/products/bermuda.png',
+            imagen:'/images/products/bermuda.png',
             nombreDelProducto:'Bermudas de Jean',
             descripcion: 'Bermuda de jean azul.',
             comentarios:[{

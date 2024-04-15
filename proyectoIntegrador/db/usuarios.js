@@ -2,6 +2,7 @@ const usuarios={
     usuario:{
         email:'martinaperez@gmail.com',
         usuario: 'martinaperez',
+        imagenDePerfil:'/images/users/user1.png',
         contraseña: 'martina2004',
         fechaNacimiento: '2004-02-26',
         documento: 46442731,

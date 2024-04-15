@@ -2,7 +2,7 @@ const db = require('../db/usuarios.js')
 
 const usersController = {
     profile: function(req,res){
-        res.render('profile', {users: usuario.usuario})
+        res.render('profile', {user: usuarios.usuario})
     },
     register: function(req,res){
         res.render('register')

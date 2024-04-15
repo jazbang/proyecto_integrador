@@ -2,6 +2,7 @@ const usuarios={
     usuario:{
         email:'martinaperez@gmail.com',
         usuario: 'martinaperez',
+        imagenDePerfil:'/images/users/user1.png',
         contraseña: 'martina2004',
         fechaNacimiento: '2004-02-26',
         documento: 46442731,
@@ -92,7 +93,7 @@ const usuarios={
                 imagenDePerfil:'/images/users/user1.png'
             }],
         },{
-            imagen:'/images/products/saco.png',
+            imagen:'/images/products/blazer.png',
             nombreDelProducto:'Saco',
             descripcion: 'Saco negro de vestir.',
             comentarios:[{

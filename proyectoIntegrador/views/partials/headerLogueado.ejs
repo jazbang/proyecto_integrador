@@ -1,3 +1,7 @@
+const express= require('express');
+const router= express.Router();
+const usuarios= require('../db/usuarios');
+
 <header class="main-header">
 	<div class="container">
 		<div class="row align-items-center">
@@ -34,7 +38,7 @@
 	
 			<ul class="right-navbar">
 				<li><a href="/profile.ejs">
-						Nombre del usuario <i class="fas fa-user"></i>
+						<%= usuarios.usuario %> <i class="fas fa-user"></i>
 					</a>
 				</li>
 				<li>

@@ -9,8 +9,11 @@ const productController = {
         res.render('product', {product: db.productos})
     },
     agregarProducto:function(req,res){
-        res.render('product-add', {product: db.productos})
+        res.render('product-add', {product: db.productos, user: db.usuario})
     },
+    searchResults: function(req,res){
+        res.render('search-results', {product: db.productos})
+    }
 }
 
 module.exports = productController;

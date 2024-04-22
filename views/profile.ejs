@@ -16,7 +16,7 @@
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title"><%= user.usuario %>
-						<a href="profile-edit.html">
+						<a href="/users/edit">
 							<i class="fas fa-cog"></i>
 						</a>
 					</h1>
@@ -44,13 +44,13 @@
 			<!-- Show mis productos -->
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="product.html">
+					<a href="/product">
 						<figure class="product-box_image">
-							<img src="/images/products/default-image.png" alt="cafetera moulinex">
+							<img src="<%=product[1].imagen%>" alt="<%=product[1].nombreDelProducto%>">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
+							<h2><%=product[1].nombreDelProducto%></h2>
+							<p><%=product[1].descripcion%></p>
 							<p>Comentarios: 12</p>
 						</article>
 					</a>
@@ -58,14 +58,13 @@
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="product.html">
+					<a href="/product">
 						<figure class="product-box_image">
-							<img src="/images/products/default-image.png" alt="cafetera moulinex">
+							<img src="<%=product[2].imagen%>" alt="<%=product[2].nombreDelProducto%>">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-								delectus ex</p>
+							<h2><%=product[2].nombreDelProducto%></h2>
+							<p><%=product[2].descripcion%></p>
 							<p>Comentarios: 12</p>
 						</article>
 					</a>
@@ -73,14 +72,13 @@
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="product.html">
+					<a href="/product">
 						<figure class="product-box_image">
-							<img src="/images/products/default-image.png" alt="cafetera moulinex">
+							<img src="<%=product[3].imagen%>" alt="<%=product[3].nombreDelProducto%>">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-								delectus ex</p>
+							<h2><%=product[3].nombreDelProducto%></h2>
+							<p><%=product[3].descripcion%></p>
 							<p>Comentarios: 12</p>
 						</article>
 					</a>
@@ -88,14 +86,13 @@
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="product.html">
+					<a href="/product">
 						<figure class="product-box_image">
-							<img src="/images/products/default-image.png" alt="cafetera moulinex">
+							<img src="<%=product[4].imagen%>" alt="<%=product[4].nombreDelProducto%>">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-								delectus ex</p>
+							<h2><%=product[4].nombreDelProducto%></h2>
+							<p><%=product[4].descripcion%></p>
 							<p>Comentarios: 12</p>
 						</article>
 					</a>
@@ -103,14 +100,13 @@
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="product.html">
+					<a href="/product">
 						<figure class="product-box_image">
-							<img src="/images/products/default-image.png" alt="cafetera moulinex">
+							<img src="<%=product[5].imagen%>" alt="<%=product[5].nombreDelProducto%>">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-								delectus ex</p>
+							<h2><%=product[5].nombreDelProducto%></h2>
+							<p><%=product[5].descripcion%></p>
 							<p>Comentarios: 12</p>
 						</article>
 					</a>
@@ -118,14 +114,13 @@
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="product.html">
+					<a href="/product">
 						<figure class="product-box_image">
-							<img src="/images/products/default-image.png" alt="cafetera moulinex">
+							<img src="<%=product[6].imagen%>" alt="<%=product[6].nombreDelProducto%>">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-								delectus ex</p>
+							<h2><%=product[6].nombreDelProducto%></h2>
+							<p><%=product[6].descripcion%></p>
 							<p>Comentarios: 12</p>
 						</article>
 					</a>
@@ -133,14 +128,13 @@
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="product.html">
+					<a href="/product">
 						<figure class="product-box_image">
-							<img src="/images/products/default-image.png" alt="cafetera moulinex">
+							<img src="<%=product[7].imagen%>" alt="<%=product[7].nombreDelProducto%>">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-								delectus ex</p>
+							<h2><%=product[7].nombreDelProducto%></h2>
+							<p><%=product[7].descripcion%></p>
 							<p>Comentarios: 12</p>
 						</article>
 					</a>
@@ -148,14 +142,13 @@
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="product.html">
+					<a href="/product">
 						<figure class="product-box_image">
-							<img src="/images/products/default-image.png" alt="cafetera moulinex">
+							<img src="<%=product[8].imagen%>" alt="<%=product[8].nombreDelProducto%>">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-								delectus ex</p>
+							<h2><%=product[8].nombreDelProducto%></h2>
+							<p><%=product[8].descripcion%></p>
 							<p>Comentarios: 12</p>
 						</article>
 					</a>

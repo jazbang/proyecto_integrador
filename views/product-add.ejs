@@ -15,9 +15,8 @@
 			<div class="col-12">
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> 
-				<form action="/users/product-add" method="get">
+				<form action="/users/add" method="get">
 					<label for="imagen">Imagen:</label><br>
 					<input type="file" id="imagen" name="imagen" required><br>
 
@@ -31,6 +30,8 @@
 				</form>
 			</h2>
 
+			<!-- Show the "ultimos" products -->
+			<%-  include('./partials/ultimosProductos')%>
 
 	<!-- footer -->
 	<%- include('./partials/footer') %>

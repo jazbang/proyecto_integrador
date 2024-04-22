@@ -16,6 +16,16 @@ const usuarios={
             nombreDeUsuario: 'matiasfernandez',
             textoDelComentario:'Muy buena calidad.',
             imagenDePerfil:'/images/users/user2.png'
+        },
+        {
+            nombreDeUsuario: 'estimiedziak',
+            textoDelComentario:'Volvería a comprar definitivamente.',
+            imagenDePerfil:'/images/users/user5.png'
+        },
+        {
+            nombreDeUsuario: 'martinaperez',
+            textoDelComentario:'Muy suave el material. Me encanta.',
+            imagenDePerfil:'/images/users/user1.png'
         }]
         },
         {
@@ -26,6 +36,16 @@ const usuarios={
                 nombreDeUsuario: 'karinarodriguez',
                 textoDelComentario:'Volvería a comprar definitivamente.',
                 imagenDePerfil:'/images/users/user3.png'
+            },
+            {
+                nombreDeUsuario: 'estimiedziak',
+                textoDelComentario:'Volvería a comprar definitivamente.',
+                imagenDePerfil:'/images/users/user5.png'
+            },
+            {
+                nombreDeUsuario: 'martinaperez',
+                textoDelComentario:'Muy suave el material. Me encanta.',
+                imagenDePerfil:'/images/users/user1.png'
             }],
         },{
             imagen:'/images/products/babytee.png',
@@ -35,6 +55,16 @@ const usuarios={
                 nombreDeUsuario: 'omardiaz',
                 textoDelComentario:'Recomiendo totalmente.',
                 imagenDePerfil:'/images/users/user4.png'
+            },
+            {
+                nombreDeUsuario: 'estimiedziak',
+                textoDelComentario:'Volvería a comprar definitivamente.',
+                imagenDePerfil:'/images/users/user5.png'
+            },
+            {
+                nombreDeUsuario: 'martinaperez',
+                textoDelComentario:'Muy suave el material. Me encanta.',
+                imagenDePerfil:'/images/users/user1.png'
             }],
         },{
             imagen:'/images/products/buzo.png',
@@ -64,6 +94,16 @@ const usuarios={
                 nombreDeUsuario: 'martinaperez',
                 textoDelComentario:'Muy comoda.',
                 imagenDePerfil:'/images/users/user1.png'
+            },
+            {
+                nombreDeUsuario: 'estimiedziak',
+                textoDelComentario:'Volvería a comprar definitivamente.',
+                imagenDePerfil:'/images/users/user5.png'
+            },
+            {
+                nombreDeUsuario: 'martinaperez',
+                textoDelComentario:'Muy suave el material. Me encanta.',
+                imagenDePerfil:'/images/users/user1.png'
             }],
         },{
             imagen:'/images/products/campera.png',
@@ -73,6 +113,16 @@ const usuarios={
                 nombreDeUsuario: 'estimiedziak',
                 textoDelComentario:'La mejor calidad.',
                 imagenDePerfil:'/images/users/user5.png'
+            },
+            {
+                nombreDeUsuario: 'estimiedziak',
+                textoDelComentario:'Volvería a comprar definitivamente.',
+                imagenDePerfil:'/images/users/user5.png'
+            },
+            {
+                nombreDeUsuario: 'martinaperez',
+                textoDelComentario:'Muy suave el material. Me encanta.',
+                imagenDePerfil:'/images/users/user1.png'
             }],
         },{
             imagen:'/images/products/musculosa.png',
@@ -82,6 +132,16 @@ const usuarios={
                 nombreDeUsuario: 'andrearasligui',
                 textoDelComentario:'Me encantó el material.',
                 imagenDePerfil:'/images/users/user5.png'
+            },
+            {
+                nombreDeUsuario: 'estimiedziak',
+                textoDelComentario:'Volvería a comprar definitivamente.',
+                imagenDePerfil:'/images/users/user5.png'
+            },
+            {
+                nombreDeUsuario: 'martinaperez',
+                textoDelComentario:'Muy suave el material. Me encanta.',
+                imagenDePerfil:'/images/users/user1.png'
             }],
         },{
             imagen:'/images/products/parachutte.png',
@@ -90,6 +150,16 @@ const usuarios={
             comentarios:[{
                 nombreDeUsuario: 'biancadelre',
                 textoDelComentario:'Divino el color.',
+                imagenDePerfil:'/images/users/user1.png'
+            },
+            {
+                nombreDeUsuario: 'estimiedziak',
+                textoDelComentario:'Volvería a comprar definitivamente.',
+                imagenDePerfil:'/images/users/user5.png'
+            },
+            {
+                nombreDeUsuario: 'martinaperez',
+                textoDelComentario:'Muy suave el material. Me encanta.',
                 imagenDePerfil:'/images/users/user1.png'
             }],
         },{
@@ -100,6 +170,16 @@ const usuarios={
                 nombreDeUsuario: 'valeriagonzales',
                 textoDelComentario:'Me encanta el material, muy comodo.',
                 imagenDePerfil:'/images/users/user3.png'
+            },
+            {
+                nombreDeUsuario: 'estimiedziak',
+                textoDelComentario:'Volvería a comprar definitivamente.',
+                imagenDePerfil:'/images/users/user5.png'
+            },
+            {
+                nombreDeUsuario: 'martinaperez',
+                textoDelComentario:'Muy suave el material. Me encanta.',
+                imagenDePerfil:'/images/users/user1.png'
             }],
         },{
             imagen:'/images/products/bermuda.png',
@@ -109,6 +189,16 @@ const usuarios={
                 nombreDeUsuario: 'juanlopez',
                 textoDelComentario:'Recomiendo.',
                 imagenDePerfil:'/images/users/user5.png'
+            },
+            {
+                nombreDeUsuario: 'estimiedziak',
+                textoDelComentario:'Volvería a comprar definitivamente.',
+                imagenDePerfil:'/images/users/user5.png'
+            },
+            {
+                nombreDeUsuario: 'martinaperez',
+                textoDelComentario:'Muy suave el material. Me encanta.',
+                imagenDePerfil:'/images/users/user1.png'
             }],
         }, ]
         

@@ -19,7 +19,7 @@ const usuarios={
         }]
         },
         {
-            imagen:'/images/products/jeanMujer.png',
+            imagen:'/images/products/jean.png',
             nombreDelProducto:'Mom Jeans',
             descripcion: 'Mom jeans denim azul oscuro',
             comentarios:[{
@@ -57,7 +57,7 @@ const usuarios={
             }
             ],
         },{
-            imagen:'/images/products/polleraJean.png',
+            imagen:'/images/products/pollera.png',
             nombreDelProducto:' Pollera',
             descripcion: 'Pollera denim upcycling reversionado.',
             comentarios:[{

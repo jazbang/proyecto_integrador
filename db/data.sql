@@ -59,7 +59,7 @@ INSERT INTO productos
 VALUES(DEFAULT, '/images/products/remera.png', 'Remera', 'Remera Nike sportswear unisex algodón 100%', NULL, NULL, NULL, DEFAULT);
 
 INSERT INTO productos
-VALUES(DEFAULT, '/images/products/jeanMujer.png', 'Jean', 'Mom jeans denim azul oscuro.', NULL, NULL, NULL, DEFAULT);
+VALUES(DEFAULT, '/images/products/jean.png', 'Jean', 'Mom jeans denim azul oscuro.', NULL, NULL, NULL, DEFAULT);
 
 INSERT INTO productos
 VALUES(DEFAULT, '/images/products/buzo.png', 'Buzo', 'Buzo tipo hoodie blanco algodón 100%', NULL, NULL, NULL, DEFAULT);
@@ -68,7 +68,7 @@ INSERT INTO productos
 VALUES(DEFAULT, '/images/products/babytee.png', 'Top', 'Top blanco y rosa con estampa 100% algodón.', NULL, NULL, NULL, DEFAULT);
 
 INSERT INTO productos
-VALUES(DEFAULT, '/images/products/polleraJean.png', 'Pollera', 'Pollera denim upcycling reversionado.', NULL, NULL, NULL, DEFAULT);
+VALUES(DEFAULT, '/images/products/pollera.png', 'Pollera', 'Pollera denim upcycling reversionado.', NULL, NULL, NULL, DEFAULT);
 
 INSERT INTO productos
 VALUES(DEFAULT, '/images/products/campera.png', 'Campera', 'Campera negra puffer de The North Face.', NULL, NULL, NULL, DEFAULT);

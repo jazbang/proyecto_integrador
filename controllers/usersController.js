@@ -11,7 +11,7 @@ const usersController = {
         res.render('login')
     },
     edit: function(req,res){
-        res.render('profile-edit', {user: db.usuario})
+        res.render('profile-edit', {product: db.productos, user: db.usuario})
     }
 }
 

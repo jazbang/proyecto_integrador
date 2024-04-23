@@ -26,6 +26,10 @@ body {
   font-size: 10px;
 }
 
+a:hover {
+  color: var(--light-blue);
+}
+
 body {
   font-family: var(--base-font-family);
   font-weight: 300;

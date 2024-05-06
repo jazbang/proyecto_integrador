@@ -1,3 +1,5 @@
+// const db = require('../database/models')
+// const producto = db.Producto
 const db = require('../db/usuarios.js')
 
 

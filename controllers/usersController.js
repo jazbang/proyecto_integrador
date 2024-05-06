@@ -1,3 +1,5 @@
+// const db = require('../database/models')
+// const user = db.User
 const db = require('../db/usuarios.js')
 
 const usersController = {

@@ -1,6 +1,10 @@
-// const db = require('../database/models')
-// const user = db.User
-const db = require('../db/usuarios.js')
+const db = require('../database/models');
+const user = db.User;
+//const db = require('../db/usuarios.js');
+const bcrypt= require('bcryptjs');
+let passEncriptada = bcrypt.hashSync(req.body.password, 10);
+let check = bcrypt.compareSync(req.body.password,passEncriptada);
+
 
 const usersController = {
     profile: function(req,res){

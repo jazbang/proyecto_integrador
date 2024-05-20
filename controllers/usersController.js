@@ -14,7 +14,15 @@ const usersController = {
     },
     edit: function(req,res){
         res.render('profile-edit', {product: db.productos, user: db.usuario})
-    }
+    },
+    store: function(req, res){
+        let emailForm=req.body.email;
+        req.session.email=emailForm;
+        
+        //crear cookie
+        // res.cookie('lastTitle', ultimaPelicula, {maxAge:1000*60*0.5})
+        // return res.redirect('/') //redirigir a la pagina principal, o sea index
+     }
 }
 
 module.exports = usersController;

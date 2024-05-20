@@ -11,6 +11,13 @@ const usersController = {
         res.render('profile', {product: db.productos, user: db.usuario})
     },
     register: function(req,res){
+        user.Usuario.create({
+            username: 'req.body.user',
+            password:'req.params.password',
+            dni:'req.body.dni',
+            fotoPerfil:'req.body.fotoPerfil',
+            nacimiento:'req.body.nacimiento',
+        })
         res.render('register')
     },
     login: function(req,res){

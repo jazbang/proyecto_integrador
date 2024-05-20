@@ -31,10 +31,10 @@ module.exports = function(sequelize, dataTypes) {
         // falta id_usuarios
     };
     let config = {
-        tableName: 'movies',
+        tableName: 'productos',
         timestamps: true,
         underscored: true
     };
-    let Movie = sequelize.define(alias, cols, config)
-    return Movie
+    let Product = sequelize.define(alias, cols, config)
+    return Product
 }

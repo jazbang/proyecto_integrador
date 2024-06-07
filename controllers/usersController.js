@@ -13,8 +13,7 @@ const usersController = {
     },
     register: function(req,res){
         let errors= validationResult(req);
-        return res.send(errors.mapped());
-        //preguntar porque se me pone en clarito, esto pasaba en clase tambien.
+        //return res.send(errors.mapped());
         if(errors.isEmpty()){
             user.Usuario.create({
                 username: 'req.body.user',
@@ -30,7 +29,12 @@ const usersController = {
         
     },
     login: function(req,res){
-        res.render('login')
+        let errors= validationResult(req);
+        if(errors.isEmpty()){
+        //redirect...
+        }else{
+            return res.render('login', {errors:errors.mapped()})
+        }
     },
     edit: function(req,res){
         res.render('profile-edit', {product: db.productos, user: db.usuario})

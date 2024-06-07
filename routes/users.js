@@ -32,12 +32,41 @@ let registerValidations=[
         // falta agregar la fecha de nacimiento, el numero de documento, la foto de perfil y lo que subraye en ipad
 ]
 
+let loginValidations= [
+    body("email") 
+        .notEmpty().withMessage("Porfavor complete el campo email.")
+        .isEmail().withMessage("Porfavor ingrese un email válido.")
+        .custom(function(value){ 
+            return db.Usuario.findOne({
+                where: {email: value},
+            })
+            .then(function(user){
+                if(!user){ 
+                    throw new Error("El email no se encuentra registrado.")
+                }
+            }) 
+        }),
+    
+    body("password")
+        .notEmpty().withMessage("Porfavor complete la contraseña.")
+        .custom(function(value, { req }){ 
+            return db.Usuario.findOne({
+                where: {email: req.body.email},
+            })
+            .then(function(user){
+                if(user && !bcrypt.compareSync(value, user.contraseña) ){ //chequear
+                    throw new Error("La contraseña es incorrecta.")
+                }
+            }) 
+        })
+]; 
+
 
 /* GET users listing. */
 router.get('/profile', usersController.profile);
 
 router.get('/register', usersController.register);
-router.post('/register',registerValidations,usersController.register);
+router.post('/register',registerValidations, loginValidations, usersController.register);
 
 router.get('/edit', usersController.edit)
 router.get('/login', usersController.login)

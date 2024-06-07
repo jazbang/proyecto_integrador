@@ -19,19 +19,26 @@
 			<h2 class="col-12"> 
 				<form action="/users/profile" method="get">
 					<label for="email">Email:</label><br>
-					<input type="email" id="email" name="email" required><br>
+					<input type="email" id="email" name="email" value="" required><br>
 
 					<label for="password">Contraseña:</label><br>
-					<input type="password" id="password" name="password" required><br>
+					<input type="password" id="password" name="password" value="" required><br>
 
 					<label for="recordarme">Recordarme:</label><br>
-					<input type="checkbox" id="recordarme" name="recordarme" required><br>
+					<input type="checkbox" id="recordarme" name="recordarme" value=""><br>
 
-					<input type="submit" value="Login">
+					<button type="submit">Login</button> 
 				</form>
 			</h2>
 		</div>
 	</div>
+
+	<% if(locals.errors && errors.email){%>
+		<p><%= errors.email.msg %></p>
+	<% } %> 
+	<% if(locals.errors && errors.password){%>
+		<p><%= errors.password.msg %></p>
+	<% } %> 
 
 	<!-- footer -->
 	<%- include('./partials/footer') %>

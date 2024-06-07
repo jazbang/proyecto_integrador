@@ -35,10 +35,23 @@
 				<label for="profile">Foto de perfil (URL):</label><br>
 				<input type="text" id="profile" name="profile" value="" required><br>
 
-				<input type="submit" value="Registrarse">
+				<button type="submit">Registrarse</button> 
 			</form>
 		</div>
 	</div>
+	<% if(locals.errors && errors.email){ %>
+		<p><%= errors.email.msg %></p>
+	<% } %>
+	<% if(locals.errors && errors.password){ %>
+		<p><%= errors.password.msg %></p>
+	<% } %>
+	<% if(locals.errors && errors.user){%>
+		<p><%= errors.user.msg %></p>
+	<%} %>
+	<% if(locals.errors && errors.dni){%>
+		<p><%= errors.dni.msg %></p>
+	<%} %>
+	<!-- falta agregar los que no hice en la ruta -->
 
 	<!-- footer -->
 	<%- include('./partials/footer') %>

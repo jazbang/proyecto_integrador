@@ -4,6 +4,7 @@ const user = db.User;
 const bcrypt= require('bcryptjs');
 let passEncriptada = bcrypt.hashSync(req.body.password, 10);
 let check = bcrypt.compareSync(req.body.password,passEncriptada);
+let {validationResult} = require('express-validator');
 
 
 const usersController = {
@@ -11,14 +12,22 @@ const usersController = {
         res.render('profile', {product: db.productos, user: db.usuario})
     },
     register: function(req,res){
-        user.Usuario.create({
-            username: 'req.body.user',
-            password:'req.params.password',
-            dni:'req.body.dni',
-            fotoPerfil:'req.body.fotoPerfil',
-            nacimiento:'req.body.nacimiento',
-        })
-        res.render('register')
+        let errors= validationResult(req);
+        return res.send(errors.mapped());
+        //preguntar porque se me pone en clarito, esto pasaba en clase tambien.
+        if(errors.isEmpty()){
+            user.Usuario.create({
+                username: 'req.body.user',
+                password:'req.params.password',
+                dni:'req.body.dni',
+                fotoPerfil:'req.body.fotoPerfil',
+                nacimiento:'req.body.nacimiento',
+            })
+            res.render('register')
+        }else{
+            return res.render('login', {errors:errors.mapped()})
+        }
+        
     },
     login: function(req,res){
         res.render('login')

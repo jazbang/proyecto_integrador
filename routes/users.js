@@ -7,26 +7,27 @@ let db=require('../database/models');
 let registerValidations=[
     body('email')
         .notEmpty().withMessage('Por favor complete el campo email')
-        .isEmail().withMessage('Por favor ingrese un email valido')
+        .isEmail().withMessage('Por favor ingrese un email válido')
         .custom(function(value){
-            return db.User.findOne({
+            return db.Usuario.findOne({
                 where:{email: value},
             })
             .then(function(user){
                 if(user){
-                    throw new Error ('El mail ingresado ya existe, por favor registrese con otro email');
+                    throw new Error ('El mail ingresado ya está registrado, por favor inicie sesion ');
 
                 }
             })
         }),
     body('user')
-        .notEmpty().withMessage('Por favor complete el campo con su nombre de usuario'),
+        .notEmpty().withMessage('Por favor complete el campo con su nombre de usuario')
+        .isString().withMessage('El campo debe ser de tipo texto'),
         //agregar de tipo texto y el custom para que no se repitan los nombres de usuarios
     body('password')
         .notEmpty().withMessage('Por favor complete el campo con su contraseña')
         .isLength({ min: 4 }).withMessage('Su contraseña debe tener al menos 4 caracteres'),
     body('dni')
-        .isInt().withMessage('Porfavos complete el campo con numeros enteros')
+        .isInt().withMessage('Por favor complete el campo con numeros enteros')
 
         // falta agregar la fecha de nacimiento, el numero de documento, la foto de perfil y lo que subraye en ipad
 ]

@@ -20,13 +20,13 @@ module.exports = function(sequelize, dataTypes) {
             type: dataTypes.STRING,
         },
         createdAt:{
-            type: dataTypes.DATETIME,
+            type: dataTypes.DATE,
         },
         updatedAt:{
-            type: dataTypes.DATETIME,
+            type: dataTypes.DATE,
         },
         deletedAt:{
-            type: dataTypes.DATETIME,
+            type: dataTypes.DATE,
         },
         // falta id_usuarios
     };

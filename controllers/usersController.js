@@ -44,8 +44,9 @@ const usersController = {
         req.session.email=emailForm;
         
         //crear cookie
-        // res.cookie('lastTitle', ultimaPelicula, {maxAge:1000*60*0.5})
+        res.cookie('lastEmail', emailForm, {maxAge:1000*60*0.5})
         // return res.redirect('/') //redirigir a la pagina principal, o sea index
+        //creo que falta hacer lo de la vista
      }
 }
 

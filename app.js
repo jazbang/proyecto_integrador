@@ -10,11 +10,13 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+//Incluimos session:
 app.use(session({
   secret:'marinodb',
   resave:false,
   saveUninitialize: true
 }))
+//paso dato de session a las vistas:
 app.use(function(req,res,next){
   if(req.session.email !==undefined){
     res.locals.email=req.session.email 

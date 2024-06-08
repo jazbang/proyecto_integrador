@@ -68,7 +68,10 @@ router.get('/profile', usersController.profile);
 router.get('/register', usersController.register);
 router.post('/register',registerValidations, loginValidations, usersController.register);
 
-router.get('/edit', usersController.edit)
-router.get('/login', usersController.login)
+router.get('/edit', usersController.edit);
+
+router.get('/login', usersController.login);
+router.post('/login', usersController.login)
+
 
 module.exports = router;

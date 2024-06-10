@@ -37,4 +37,5 @@ module.exports = function(sequelize, dataTypes) {
     };
     let Product = sequelize.define(alias, cols, config)
     return Product
+    //acá tenemos que hacer las relaciones
 }

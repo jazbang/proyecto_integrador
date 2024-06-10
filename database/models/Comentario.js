@@ -28,4 +28,5 @@ module.exports = function(sequelize, dataTypes) {
     };
     let Comentario = sequelize.define(alias, cols, config)
     return Comentario
+    //acá tenemos que hacer las relaciones
 }

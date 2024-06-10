@@ -27,10 +27,10 @@ let registerValidations=[
         .notEmpty().withMessage('Por favor complete el campo con su contraseña')
         .isLength({ min: 4 }).withMessage('Su contraseña debe tener al menos 4 caracteres'),
     body('dni')
-        .isInt().withMessage('Por favor complete el campo con numeros enteros')
-
-        // falta agregar la fecha de nacimiento, el numero de documento, la foto de perfil y lo que subraye en ipad
-]
+        .isInt().withMessage('Por favor complete el campo con numeros enteros'),
+    body('fotoPerfil')
+        .isString().withMessage('El campo debe ser de tipo texto'),
+];
 
 let loginValidations= [
     body("email") 

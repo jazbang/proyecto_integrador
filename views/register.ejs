@@ -51,7 +51,9 @@
 	<% if(locals.errors && errors.dni){%>
 		<p><%= errors.dni.msg %></p>
 	<%} %>
-	<!-- falta agregar los que no hice en la ruta -->
+	<% if(locals.errors && errors.fotoPerfil){%>
+		<p><%= errors.fotoPerfil.msg %></p>
+	<%} %>
 
 	<!-- footer -->
 	<%- include('./partials/footer') %>

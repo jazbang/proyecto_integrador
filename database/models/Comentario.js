@@ -27,6 +27,17 @@ module.exports = function(sequelize, dataTypes) {
         //esto va a ser true cuando pongamos las relaciones entre las tablas
     };
     let Comentario = sequelize.define(alias, cols, config)
+    Comentario.associate= function(models){
+        Comentario.belongsTo(models.Usuario,{
+            as: 'usuario',
+            foreignKey: 'id_usuarios'
+        })
+
+        Comentario.belongTo(models.Producto,{
+            as: 'producto',
+            foreignKey: 'id_productos'
+        })
+    };
     return Comentario
-    //acá tenemos que hacer las relaciones
+    
 }

@@ -19,8 +19,8 @@ app.use(session({
 }))
 //paso dato de session a las vistas:
 app.use(function(req,res,next){
-  if(req.session.email !==undefined){
-    res.locals.email=req.session.email 
+  if(req.session.usuarioLogueado !==undefined){
+    res.locals.user=req.session.suarioLogueado 
   }
   return next();
 })

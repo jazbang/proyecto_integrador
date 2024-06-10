@@ -1,7 +1,7 @@
 const db = require('../database/models');
-const producto = db.Comentario;
+const comment = db.Comentario;
 
-const productController = {
+const commentController = {
     comments: function(req,res){
         //res.render('product', {product: db.productos})
     },

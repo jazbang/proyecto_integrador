@@ -71,7 +71,7 @@ router.post('/register',registerValidations, loginValidations, usersController.r
 router.get('/edit', usersController.edit);
 
 router.get('/login', usersController.login);
-router.post('/login', usersController.login)
+router.post('/login', usersController.login);
 
 
 module.exports = router;

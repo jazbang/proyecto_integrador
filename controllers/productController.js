@@ -11,7 +11,19 @@ const productController = {
         res.render('product', {product: db.productos})
     },
     agregarProducto:function(req,res){
-        res.render('product-add', {product: db.productos, user: db.usuario})
+        let errors= validationResult(req);
+        //return res.send(errors.mapped());
+        if(errors.isEmpty()){
+            producto.create({
+                imagen: 'req.body.imagen',
+                nombre:'req.body.product',
+                descripcion:'req.body.descripcion',
+                //createdAt ver
+            })
+            res.redirect('/') //hacia index porque tenes que poder ver los productos en el orden de más reciente a más viejo 
+        }else{
+            return res.render('/product-add', {errors:errors.mapped()})
+        }
     },
     searchResults: function(req,res){
         busqueda = req.query.search;

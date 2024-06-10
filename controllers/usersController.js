@@ -14,12 +14,12 @@ const usersController = {
         //return res.send(errors.mapped());
         if(errors.isEmpty()){
             let passEncriptada = bcrypt.hashSync(req.body.password, 10);
-            user.Usuario.create({
+            user.create({
                 username: 'req.body.user',
                 password:passEncriptada,
                 dni:'req.body.dni',
                 fotoPerfil:'req.body.fotoPerfil',
-                nacimiento:'req.body.nacimiento',
+                nacimiento:'req.body.nacimiento'
             })
             res.redirect('/')
         }else{

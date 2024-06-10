@@ -20,7 +20,7 @@
 					<label for="imagen">Imagen:</label><br>
 					<input type="file" id="imagen" name="imagen" required><br>
 
-					<label for="producto">Producto:</label><br>
+					<label for="product">Producto:</label><br>
 					<input type="text" id="product" name="product" required><br>
 
 					<label for="descripcion">Descripción:</label><br>
@@ -34,6 +34,16 @@
 			<%-  include('./partials/ultimosProductos')%>
 		</div>
 	</div>
+
+	<% if(locals.errors && errors.imagen){%>
+		<p><%= errors.imagen.msg %></p>
+	<% } %> 
+	<% if(locals.errors && errors.product){%>
+		<p><%= errors.product.msg %></p>
+	<% } %> 
+	<% if(locals.errors && errors.descripcion){%>
+		<p><%= errors.descripcion.msg %></p>
+	<% } %> 
 
 	<!-- footer -->
 	<%- include('./partials/footer') %>

@@ -44,7 +44,7 @@ const usersController = {
         req.session.username=usuarioLogueado;
         
         //crear cookie
-        res.cookie('recordarme', usuarioLogueado, {maxAge:1000*60*0.5}) //cómo hago para que me recuerde siempre
+        res.cookie('recordarme', usuarioLogueado, {maxAge:24*60*60*1000}) //cómo hago para que me recuerde siempre
         // return res.redirect('/') //redirigir a la pagina principal, o sea index
         //creo que falta hacer lo de la vista
         return res.redirect('/')

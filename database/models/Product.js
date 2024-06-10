@@ -27,8 +27,7 @@ module.exports = function(sequelize, dataTypes) {
         },
         deletedAt:{
             type: dataTypes.DATE,
-        },
-        // falta id_usuarios
+        }
     };
     let config = {
         tableName: 'productos',

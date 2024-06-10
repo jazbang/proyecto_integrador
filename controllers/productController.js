@@ -14,8 +14,23 @@ const productController = {
         res.render('product-add', {product: db.productos, user: db.usuario})
     },
     searchResults: function(req,res){
-        res.render('search-results', {product: db.productos})
-    }
+        busqueda = req.query.search;
+        let filtrado = {
+            where: {
+                nombre: {[db.Sequelize.op.like]: "%" + busqueda + "%"}
+            },
+            include: [
+                {association: 'comentarios'}
+            ]
+        }
+        db.Producto.findAll(filtrado)
+        .then(function(resultados){
+            return res-render('search-results', {title: `Resultados de la búsqueda: ${busqueda}`, products: resultados})
+        })
+        .catch(function(error){
+            console.log(error);
+        });   
+    },
 }
 
 module.exports = productController;

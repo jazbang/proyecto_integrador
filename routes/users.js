@@ -66,12 +66,12 @@ let loginValidations= [
 router.get('/profile', usersController.profile);
 
 router.get('/register', usersController.register);
-router.post('/register',registerValidations, loginValidations, usersController.register);
+router.post('/register',registerValidations, usersController.register);
 
 router.get('/edit', usersController.edit);
 
 router.get('/login', usersController.login);
-router.post('/login', usersController.login);
+router.post('/login', loginValidations, usersController.login);
 
 
 module.exports = router;

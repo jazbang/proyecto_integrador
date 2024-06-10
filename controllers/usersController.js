@@ -40,13 +40,14 @@ const usersController = {
         res.render('profile-edit', {product: db.productos, user: db.usuario})
     },
     store: function(req, res){
-        let emailForm=req.body.email;
-        req.session.email=emailForm;
+        let usuarioLogueado=req.body.usuarioLogueado.username;
+        req.session.username=usuarioLogueado;
         
         //crear cookie
-        res.cookie('lastEmail', emailForm, {maxAge:1000*60*0.5})
+        res.cookie('recordarme', usuarioLogueado, {maxAge:1000*60*0.5}) //cómo hago para que me recuerde siempre
         // return res.redirect('/') //redirigir a la pagina principal, o sea index
         //creo que falta hacer lo de la vista
+        return res.redirect('/')
      }
 }
 

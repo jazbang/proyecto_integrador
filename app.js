@@ -20,7 +20,7 @@ app.use(session({
 //paso dato de session a las vistas:
 app.use(function(req,res,next){
   if(req.session.usuarioLogueado !==undefined){
-    res.locals.user=req.session.suarioLogueado 
+    res.locals.user=req.session.usuarioLogueado
   }
   return next();
 })

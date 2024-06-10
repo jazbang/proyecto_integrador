@@ -33,10 +33,17 @@
 			</ul>
 	
 			<ul class="right-navbar">
-				<li>Bienvenido <a href="/users/profile">
-						<%=locals.usuarioLogueado.username%> <i class="fas fa-user"></i>
-					</a>
-				</li>
+				<%  if (locals.user != undefined){ %> 
+					<li>Bienvenido <a href="/users/profile">
+							<%=locals.usuarioLogueado.username%> <i class="fas fa-user"></i>
+						</a>
+					</li>
+				<% } else { %>
+					<li>Bienvenido <a href="/users/profile">
+							<%=req.cookies.username%> <i class="fas fa-user"></i>
+						</a>
+					</li>
+				<% } %>
 				<li>
 					<form action="/" method="get">
 						<button class="logout" type="submit">

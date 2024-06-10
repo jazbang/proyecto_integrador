@@ -22,7 +22,7 @@ const usersController = {
                 fotoPerfil:'req.body.fotoPerfil',
                 nacimiento:'req.body.nacimiento',
             })
-            res.render('register')
+            res.redirect('/')
         }else{
             return res.render('login', {errors:errors.mapped()})
         }

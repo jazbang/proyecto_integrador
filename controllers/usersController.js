@@ -47,7 +47,9 @@ const usersController = {
             let usuarioLogueado=req.body.usuarioLogueado.username;
             req.session.username=usuarioLogueado;
             res.cookie('recordarme', usuarioLogueado, {maxAge:24*60*60*1000});
+            res.locals.recordarme = recordarme
             return res.redirect('/');
+    
         }
         
      }

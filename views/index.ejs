@@ -4,10 +4,10 @@
 <%-  include('./partials/head')%>
 <body>
 	<!-- Header -->
-	<%  if (locals.user != undefined || recordarme != undefined ){ %> 
-		<%  include('./partials/headerLogueado')%>
+	<% if (locals.user != undefined || locals.recordarme != undefined) { %> 
+		<% include('./partials/headerLogueado') %>
 	<% } else { %>
-		<%  include('./partials/header')%>
+		<% include('./partials/header') %>
 	<% } %>
 	<!-- /Header -->
 	

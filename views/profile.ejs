@@ -39,119 +39,30 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Mis productos</h2>
+				<% if(productos){ %>
+					<% let contador=0%>
+					<% for(let i=0; i<productos.length; i++){%>
+							<%=contador%>+=1
+					<%}%>
+					<h2 class="products-title">Mis productos: <%=contador%></h2>
+				<% }else{ %> 
+					<h2 class="products-title">Mis productos: <%=mensaje%></h2>
+				<%}%> 
 			</div>
 			<!-- Show mis productos -->
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="/product">
-						<figure class="product-box_image">
-							<img src="<%=product[1].imagen%>" alt="<%=product[1].nombreDelProducto%>">
-						</figure>
-						<article class="product-box_data">
-							<h2><%=product[1].nombreDelProducto%></h2>
-							<p><%=product[1].descripcion%></p>
-							<p>Comentarios: 12</p>
-						</article>
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/product">
-						<figure class="product-box_image">
-							<img src="<%=product[2].imagen%>" alt="<%=product[2].nombreDelProducto%>">
-						</figure>
-						<article class="product-box_data">
-							<h2><%=product[2].nombreDelProducto%></h2>
-							<p><%=product[2].descripcion%></p>
-							<p>Comentarios: 12</p>
-						</article>
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/product">
-						<figure class="product-box_image">
-							<img src="<%=product[3].imagen%>" alt="<%=product[3].nombreDelProducto%>">
-						</figure>
-						<article class="product-box_data">
-							<h2><%=product[3].nombreDelProducto%></h2>
-							<p><%=product[3].descripcion%></p>
-							<p>Comentarios: 12</p>
-						</article>
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/product">
-						<figure class="product-box_image">
-							<img src="<%=product[4].imagen%>" alt="<%=product[4].nombreDelProducto%>">
-						</figure>
-						<article class="product-box_data">
-							<h2><%=product[4].nombreDelProducto%></h2>
-							<p><%=product[4].descripcion%></p>
-							<p>Comentarios: 12</p>
-						</article>
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/product">
-						<figure class="product-box_image">
-							<img src="<%=product[5].imagen%>" alt="<%=product[5].nombreDelProducto%>">
-						</figure>
-						<article class="product-box_data">
-							<h2><%=product[5].nombreDelProducto%></h2>
-							<p><%=product[5].descripcion%></p>
-							<p>Comentarios: 12</p>
-						</article>
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/product">
-						<figure class="product-box_image">
-							<img src="<%=product[6].imagen%>" alt="<%=product[6].nombreDelProducto%>">
-						</figure>
-						<article class="product-box_data">
-							<h2><%=product[6].nombreDelProducto%></h2>
-							<p><%=product[6].descripcion%></p>
-							<p>Comentarios: 12</p>
-						</article>
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/product">
-						<figure class="product-box_image">
-							<img src="<%=product[7].imagen%>" alt="<%=product[7].nombreDelProducto%>">
-						</figure>
-						<article class="product-box_data">
-							<h2><%=product[7].nombreDelProducto%></h2>
-							<p><%=product[7].descripcion%></p>
-							<p>Comentarios: 12</p>
-						</article>
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/product">
-						<figure class="product-box_image">
-							<img src="<%=product[8].imagen%>" alt="<%=product[8].nombreDelProducto%>">
-						</figure>
-						<article class="product-box_data">
-							<h2><%=product[8].nombreDelProducto%></h2>
-							<p><%=product[8].descripcion%></p>
-							<p>Comentarios: 12</p>
-						</article>
-					</a>
+					<% for(let i=0; i<productos.length; i++){%>
+						<a href="/product">
+							<figure class="product-box_image">
+								<img src=<%=productos[i].imagen%> alt="<%=productos[i].nombre%>">
+							</figure>
+							<article class="product-box_data">
+								<a href='/product/id'><h2><%=productos[i].nombre%></h2></a>
+								<!-- <p>Comentarios: 12</p> -->
+							</article>
+						</a>
+					<%}%> 
 				</section>
 			</div>
 		</div>

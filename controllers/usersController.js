@@ -7,7 +7,24 @@ let {validationResult} = require('express-validator');
 
 const usersController = {
     profile: function(req,res){
-        res.render('profile', {product: db.productos, user: db.usuario})
+        let userId= req.session.id
+        user.findByPk(userId,{
+            order:['createdAt', 'DESC'],
+            include:[{association: 'productos'}]
+        })
+        .then(function(user){
+            if(user){
+                return res.render('profile',{productos:user.Products});
+            } else{
+                let mensaje= 'Usted no ha cargado ningún producto'
+                return res.render('profile', {mensaje:mensaje})
+            }
+        })
+        .catch(function(error){
+            return console.log(error)
+
+        })
+       // res.render('profile', {product: db.productos, user: db.usuario})
     },
     register: function(req,res){
         let errors= validationResult(req);

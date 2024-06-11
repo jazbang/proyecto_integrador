@@ -18,7 +18,6 @@ const productController = {
                 imagen: 'req.body.imagen',
                 nombre:'req.body.product',
                 descripcion:'req.body.descripcion',
-                //createdAt ver
             })
             res.redirect('/') //hacia index porque tenes que poder ver los productos en el orden de más reciente a más viejo 
         }else{

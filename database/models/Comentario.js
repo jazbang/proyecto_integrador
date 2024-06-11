@@ -19,6 +19,12 @@ module.exports = function(sequelize, dataTypes) {
         deletedAt:{
             type: dataTypes.DATE,
         },
+        id_usuarios:{
+            type: dataTypes.INTEGER,
+        },
+        id_productos:{
+            type: dataTypes.INTEGER,
+        }
     };
     let config = {
         tableName: 'comentarios',

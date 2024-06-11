@@ -16,7 +16,7 @@ module.exports = function(sequelize, dataTypes) {
         nombre:{
             type: dataTypes.STRING,
         },
-        descripción:{
+        descripcion:{
             type: dataTypes.STRING,
         },
         createdAt:{
@@ -27,6 +27,9 @@ module.exports = function(sequelize, dataTypes) {
         },
         deletedAt:{
             type: dataTypes.DATE,
+        },
+        id_usuarios:{
+            type: dataTypes.INTEGER,
         }
     };
     let config = {

@@ -12,7 +12,8 @@ const commentController = {
             include: [
                 {association: 'producto'},
                 {association:'usuario'}
-            ]
+            ],
+            order:['createdAt', 'DESC']
         }
         
         comment.findAll(filtrado)
@@ -24,7 +25,17 @@ const commentController = {
             });   
     },
     addComment:function(req,res){
-        //res.render('product', {product: db.productos})
+        let errors= validationResult(req);
+        if(errors.isEmpty()){
+            comment.create({
+                id_productos: req.params.id,
+                id_usuarios: req.session.user.id, //no estoy segura si esto está bien, a chequear
+                comentario: req.body.agregarComment
+            })
+            res.redirect(`/product/${req.params.id}`)
+        }else{
+            return res.render('login', {errors:errors.mapped()})
+        }
     }
 }
 

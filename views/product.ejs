@@ -4,7 +4,11 @@
 <%-  include('./partials/head')%>
 <body>
 	<!-- Header -->
-	<%-  include('./partials/header')%>
+	<% if (locals.user != undefined) { %> 
+		<% include('./partials/headerLogueado') %>
+	<% } else { %>
+		<% include('./partials/header') %>
+	<% } %>
 	<!-- /Header -->
 	
 	<!-- product detail -->
@@ -35,15 +39,28 @@
 							</article>
 						<% } %>
 					</section>
-					<form class="form" action="/product" method="GET">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-					</form>
+					<% if (locals.user != undefined) { %> 
+						<form class="form" action="/product" method="post">
+							<input class="form-input" type="text" id="agregarComment" name="agregarComment" value="" placeholder="Agregar comentario">
+							<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+						</form>
+					<% } else { %>
+						<p>Para comentar, debes estar estar logueado.</p>
+						<form class="form" action="/login" method="post">
+							<button type="submit" class="buy-now-button">Login</button>
+						</form>
+						<!-- confirmar si esto está bien -->
+					<% } %>
 					<hr>
 				</div>
 			</div>
 		</div>
 	</div>
+	
+	<% if(locals.errors && errors.agregarComment){%>
+		<p><%= errors.agregarComment.msg %></p>
+	<% } %> 
+	
 	<!-- /product detail -->
 
 	<!-- footer -->

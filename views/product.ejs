@@ -24,31 +24,16 @@
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<article>
-							<img src="<%=product[3].comentarios[0].imagenDePerfil%>" alt="">
-							<div class="data">
-								<p class="user">
-								<strong> <a href="/users/profile"><%=product[3].comentarios[0].nombreDeUsuario%>: </a> </strong>
-								 <%=product[3].comentarios[0].textoDelComentario%></p>
-							</div>
-						</article>
-						<article>
-							<img src="<%=product[3].comentarios[1].imagenDePerfil%>" alt="">
-							<div class="data">
-								<p class="user">
-								<strong> <a href="/users/profile"><%=product[3].comentarios[1].nombreDeUsuario%>: </a> </strong>
-								 <%=product[3].comentarios[1].textoDelComentario%></p>
-							</div>
-						</article>
-						<article>
-							<img src="<%=product[3].comentarios[2].imagenDePerfil%>" alt="">
-							<div class="data">
-								<p class="user">
-								<strong> <a href="/users/profile"><%=product[3].comentarios[2].nombreDeUsuario%>: </a> </strong>
-								 <%=product[3].comentarios[2].textoDelComentario%></p>
-							</div>
-						</article>
-
+						<% for (let i = 0; i < comments.length; i++) {%>
+							<article>
+								<img src="<%=comments[i].user.fotoPerfil%>" alt="foto de perfil del usuario que comentó">
+								<div class="data">
+									<p class="user">
+									<strong> <a href="/users/profile"><%=comments[i].user.username%>: </a> </strong>
+								 	<%=comments[i].comentario%></p>
+								</div>
+							</article>
+						<% } %>
 					</section>
 					<form class="form" action="/product" method="GET">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">

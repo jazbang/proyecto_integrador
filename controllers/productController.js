@@ -1,6 +1,7 @@
 const db = require('../database/models');
 const producto = db.Producto;
 //const db = require('../db/usuarios.js')
+let {validationResult} = require('express-validator');
 
 
 const productController = {
@@ -21,7 +22,7 @@ const productController = {
             })
             res.redirect('/') //hacia index porque tenes que poder ver los productos en el orden de más reciente a más viejo 
         }else{
-            return res.render('/product-add', {errors:errors.mapped()})
+            return res.render('product-add', {errors:errors.mapped()})
         }
     },
     searchResults: function(req,res){
@@ -35,12 +36,12 @@ const productController = {
             ]
         }
         db.Producto.findAll(filtrado)
-        .then(function(resultados){
-            return res-render('search-results', {title: `Resultados de la búsqueda: ${busqueda}`, products: resultados})
-        })
-        .catch(function(error){
-            console.log(error);
-        });   
+            .then(function(resultados){
+                return res.render('search-results', {title: `Resultados de la búsqueda: ${busqueda}`, products: resultados})
+            })
+            .catch(function(error){
+                console.log(error);
+            });   
     },
 }
 

@@ -16,9 +16,9 @@ const productController = {
         //return res.send(errors.mapped());
         if(errors.isEmpty()){
             producto.create({
-                imagen: 'req.body.imagen',
-                nombre:'req.body.product',
-                descripcion:'req.body.descripcion',
+                imagen: req.body.imagen,
+                nombre:req.body.product,
+                descripcion:req.body.descripcion,
             })
             res.redirect('/') //hacia index porque tenes que poder ver los productos en el orden de más reciente a más viejo 
         }else{
@@ -57,7 +57,24 @@ const productController = {
         .catch(function(error){
             console.log(error);
         })
-    }
+    },
+    edit: function(req,res){
+        let id= req.params.id
+        let userId = req.user.id; //chequear si aca trae el id del usuario ya logueado
+        producto.findByPk(id,{
+            include: [{association: 'usuario'}]
+        })
+        .then(function(result){
+            if(!result){
+                return res.send('No se encuentra el producto')
+            }
+            if(id!==userId){
+                return res.send('Usted no puede editar este producto')
+            }else{
+                return res.render('updateProduct', { product: result }); //chequear "updateProduct"
+            }
+        }) 
+    },
 }
 
 module.exports = productController;

@@ -43,6 +43,18 @@ const productController = {
                 console.log(error);
             });   
     },
+    edit: function(req,res){
+        let id= req.params.id
+        producto.findByPk(id,{
+            include: [{association: 'usuario'}]
+        })
+        .then(function(result){
+            res.render('/product', {product: result}) // ver bien que mandar asi despues accedo con product.username
+        })
+        .catch(function(error){
+            console.log(error);
+        })
+    }
 }
 
 module.exports = productController;

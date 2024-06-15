@@ -35,7 +35,7 @@ const productController = {
                 {association: 'comentarios'}
             ]
         }
-        db.Producto.findAll(filtrado)
+        producto.findAll(filtrado)
             .then(function(resultados){
                 return res.render('search-results', {title: `Resultados de la búsqueda: ${busqueda}`, products: resultados})
             })
@@ -71,7 +71,18 @@ const productController = {
             if(id!==userId){
                 return res.send('Usted no puede editar este producto')
             }else{
-                return res.render('updateProduct', { product: result }); //chequear "updateProduct"
+                let errors= validationResult(req);
+                if(errors.isEmpty()){
+                    producto.create({
+                        imagen: req.body.imagen,
+                        nombre:req.body.product,
+                        descripcion:req.body.descripcion,
+                    })
+                    res.redirect('product') 
+                }else{
+                    return res.render('product', { product: result, errors:errors.mapped() }); 
+                }
+                
             }
         }) 
     },

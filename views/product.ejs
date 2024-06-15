@@ -61,6 +61,9 @@
 	<% if(locals.errors && errors.agregarComment){%>
 		<p><%= errors.agregarComment.msg %></p>
 	<% } %> 
+	<% if(locals.errors && errors.edit){%>
+		<p><%= errors.edit.msg %></p>
+	<% } %> 
 	
 	<!-- /product detail -->
 

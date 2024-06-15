@@ -21,7 +21,7 @@ router.get('/', productController.index);
 
 router.get('/product', productController.products);
 router.get('/product', productController.encontrarUsuario);
-router.get('/editProducto/:id', productController.edit)
+router.get('/editProducto/:id', productAddValidations, productController.edit)
 
 router.get('/add', productController.agregarProducto);
 router.post('/add', productAddValidations, productController.agregarProducto);

@@ -20,8 +20,7 @@ let productAddValidations=[
 router.get('/', productController.index);
 
 router.get('/product', productController.products);
-
-router.get('/editProduct/:id', productController.edit);
+router.get('/product', productController.encontrarUsuario);
 
 router.get('/add', productController.agregarProducto);
 router.post('/add', productAddValidations, productController.agregarProducto);

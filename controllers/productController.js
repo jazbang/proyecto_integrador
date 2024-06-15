@@ -43,13 +43,16 @@ const productController = {
                 console.log(error);
             });   
     },
-    edit: function(req,res){
+    encontrarUsuario: function(req,res){
         let id= req.params.id
         producto.findByPk(id,{
             include: [{association: 'usuario'}]
         })
         .then(function(result){
-            res.render('/product', {product: result}) // ver bien que mandar asi despues accedo con product.username
+            if (!result){
+                return res.send('Producto no encontrado')
+            }
+            res.render('product', {product: result}); // el result contiene info del producto y la asociacion del usuario
         })
         .catch(function(error){
             console.log(error);

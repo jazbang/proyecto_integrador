@@ -70,22 +70,46 @@ const productController = {
             }
             if(id!==userId){
                 return res.send('Usted no puede editar este producto')
-            }else{
-                let errors= validationResult(req);
-                if(errors.isEmpty()){
-                    producto.create({
-                        imagen: req.body.imagen,
-                        nombre:req.body.product,
-                        descripcion:req.body.descripcion,
-                    })
-                    res.redirect('product') 
-                }else{
-                    return res.render('product', { product: result, errors:errors.mapped() }); 
-                }
-                
             }
+            let errors= validationResult(req);
+            if(errors.isEmpty()){
+                producto.create({
+                    imagen: req.body.imagen,
+                    nombre:req.body.product,
+                    descripcion:req.body.descripcion,
+                })
+                res.redirect('product') 
+            }else{
+                return res.render('product', { product: result, errors:errors.mapped() }); 
+            }
+                
+        
         }) 
     },
+    del:function(req,res){
+        let id= req.params.id
+        let userId = req.user.id; //chequear si aca trae el id del usuario ya logueado
+        producto.findOne(
+            {where: { id:id }}
+        )
+        .then(function(user){
+            if (!user){
+                return res.send('No se encuentra el producto')
+            }
+            if(id!==userId){
+                return res.send('Usted no puede borar este producto')
+            }
+            producto.destroy(
+                {where:[{id:id}]}
+            )
+            .then(function(result){
+                return res.redirect('/products')
+            })
+            .catch(function(error){
+                console.log(error);
+            })
+        })
+    }
 }
 
 module.exports = productController;

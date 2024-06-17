@@ -78,9 +78,9 @@ const productController = {
                     nombre:req.body.product,
                     descripcion:req.body.descripcion,
                 })
-                res.redirect('product') 
+                res.redirect('/product') 
             }else{
-                return res.render('product', { product: result, errors:errors.mapped() }); 
+                return res.render('editProduct', { product: result, errors:errors.mapped() }); 
             }
                 
         

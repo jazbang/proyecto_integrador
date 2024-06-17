@@ -22,8 +22,8 @@ router.get('/', productController.index);
 router.get('/product', productController.products);
 router.get('/product', productController.encontrarUsuario);
 
-router.get('/product', productController.edit)
-router.post('/product', productAddValidations, productController.edit) //esta bien si pongo '/product'?
+router.get('/editProduct', productController.edit)
+router.post('/editProduct', productAddValidations, productController.edit) 
 
 router.get('/product', productController.del)
 

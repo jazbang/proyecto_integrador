@@ -52,6 +52,11 @@ const usersController = {
             return res.render('login', {errors:errors.mapped()})
         }
     },
+    logout: function(req,res){
+        req.session.destroy()
+        res.clearCookie("userId")
+        return res.redirect("/")
+    },
     edit: function(req,res){
         res.render('profile-edit', {product: db.productos, user: db.usuario})
     },

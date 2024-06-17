@@ -73,5 +73,7 @@ router.get('/edit', usersController.edit);
 router.get('/login', usersController.login);
 router.post('/login', loginValidations, usersController.store);
 
+router.post('/logout', usersController.logout);
+
 
 module.exports = router;

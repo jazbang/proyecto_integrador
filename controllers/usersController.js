@@ -38,9 +38,9 @@ const usersController = {
                 foto:req.body.foto,
                 nacimiento:req.body.nacimiento
             })
-            res.redirect('/')
+            return res.redirect('/')
         }else{
-            return res.render('login', {errors:errors.mapped()})
+            return res.render('register', {errors:errors.mapped()})
         }
          
     },

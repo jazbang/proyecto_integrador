@@ -22,7 +22,13 @@ const productController = {
         });
     },
     products: function(req,res){
-        res.render('product', {product: db.productos})
+        producto.findAll()
+        .then(function(data){
+            return res.render('product', {product: data})
+        })
+        .catch(function(error){
+            console.log(error);
+        });   
     },
     agregarProducto:function(req,res){
         let errors= validationResult(req);
@@ -73,7 +79,7 @@ const productController = {
     },
     edit: function(req,res){
         let id= req.params.id
-        let userId = req.user.id; //chequear si aca trae el id del usuario ya logueado
+        let userId = req.usuario.id; //chequear si aca trae el id del usuario ya logueado
         producto.findByPk(id,{
             include: [{association: 'usuario'}]
         })

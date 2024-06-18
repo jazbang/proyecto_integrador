@@ -96,10 +96,10 @@ CREATE TABLE `productos` (
 
 INSERT INTO `productos` (`id`, `imagen`, `nombre`, `descripcion`, `created_at`, `updated_at`, `deleted_at`, `id_usuarios`) VALUES
 (1, '/images/products/remera.png', 'Remera', 'Remera Nike sportswear unisex algodón 100%', '2024-04-10 22:15:15', '2024-06-14 14:26:29', '2024-06-14 14:26:29', 1),
-(2, '/images/products/jeanMujer.png', 'Jean', 'Mom jeans denim azul oscuro.', '2024-04-10 22:15:15', '2024-06-14 14:26:58', '2024-06-14 14:26:58', 2),
+(2, '/images/products/jean.png', 'Jean', 'Mom jeans denim azul oscuro.', '2024-04-10 22:15:15', '2024-06-14 14:26:58', '2024-06-14 14:26:58', 2),
 (3, '/images/products/buzo.png', 'Buzo', 'Buzo tipo hoodie blanco algodón 100%', '2024-04-10 22:15:15', '2024-06-14 14:27:27', '2024-06-14 14:27:27', 3),
 (4, '/images/products/babytee.png', 'Top', 'Top blanco y rosa con estampa 100% algodón.', '2024-04-10 22:15:15', '2024-06-14 14:27:34', '2024-06-14 14:27:34', 4),
-(5, '/images/products/polleraJean.png', 'Pollera', 'Pollera denim upcycling reversionado.', '2024-04-10 22:15:15', '2024-06-14 14:27:42', '2024-06-14 14:27:42', 5),
+(5, '/images/products/pollera.png', 'Pollera', 'Pollera denim upcycling reversionado.', '2024-04-10 22:15:15', '2024-06-14 14:27:42', '2024-06-14 14:27:42', 5),
 (6, '/images/products/campera.png', 'Campera', 'Campera negra puffer de The North Face.', '2024-04-10 22:15:15', '2024-06-14 14:27:51', '2024-06-14 14:27:51', 1),
 (7, '/images/products/musculosa.png', 'Musculosa', 'Musculosa básica negra morely.', '2024-04-10 22:15:15', '2024-06-14 14:27:58', '2024-06-14 14:27:58', 2),
 (8, '/images/products/parachutte.png', 'Parachuttes', 'Pantalón parachutte verde militar.', '2024-04-10 22:15:15', '2024-06-14 14:28:06', '2024-06-14 14:28:06', 3),

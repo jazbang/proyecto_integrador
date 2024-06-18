@@ -45,13 +45,38 @@ const usersController = {
          
     },
     login: function(req,res){
+        if(req.session.user != undefined){
+            return res.redirect('/')
+        } else {
+            return res.render('login');
+        }
+    },
+    loginProcess: function(req, res){
         let errors= validationResult(req);
+        
         if(errors.isEmpty()){
-            res.redirect('/');
+            user.findOne({
+                where: [{email:req.body.email}]
+            })
+            .then(function(usuarioEncontrado){
+                req.session.user = {
+                    email: usuarioEncontrado.email,
+                    username: usuarioEncontrado.username,
+                }
+                if(req.body.recordarme != undefined){
+                    res.cookie('recordarme', req.session.user, {maxAge:24*60*60*1000})
+                }
+
+                return res.redirect('/');
+            })
+              .catch(function(e){
+                console.log(e);
+            })
         }else{
             return res.render('login', {errors:errors.mapped()})
         }
-    },
+        
+     },
     logout: function(req,res){
         req.session.destroy()
         res.clearCookie("userId")
@@ -59,22 +84,7 @@ const usersController = {
     },
     edit: function(req,res){
         res.render('profile-edit', {product: db.productos, user: db.usuario})
-    },
-    store: function(req, res){
-        
-        let recordar= req.body.usuarioLogueado.recordarme;
-        req.session.recordarme=recordar;
-
-        if(recordar){
-            let usuarioLogueado=req.body.usuarioLogueado.username;
-            req.session.username=usuarioLogueado;
-            res.cookie('recordarme', usuarioLogueado, {maxAge:24*60*60*1000});
-            res.locals.recordarme = recordarme
-            return res.redirect('/');
-    
-        }
-        
-     }
+    }
 }
 
 module.exports = usersController;

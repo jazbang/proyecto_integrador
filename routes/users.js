@@ -71,7 +71,7 @@ router.post('/register',registerValidations, usersController.register);
 router.get('/edit', usersController.edit);
 
 router.get('/login', usersController.login);
-router.post('/login', loginValidations, usersController.store);
+router.post('/login', loginValidations, usersController.loginProcess);
 
 router.post('/logout', usersController.logout);
 

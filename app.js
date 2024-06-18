@@ -15,15 +15,15 @@ var app = express();
 app.use(session({
   secret:'marinodb',
   resave:false,
-  saveUninitialize: true
-}))
+  saveUninitialized: true
+}));
 //paso dato de session a las vistas:
 app.use(function(req,res,next){
   if(req.session.usuarioLogueado !==undefined){
     res.locals.user=req.session.usuarioLogueado
   }
   return next();
-})
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

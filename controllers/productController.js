@@ -1,5 +1,5 @@
 const db = require('../database/models');
-const producto = db.Producto;
+const producto = db.Product;
 //const db = require('../db/usuarios.js')
 let {validationResult} = require('express-validator');
 
@@ -13,7 +13,7 @@ const productController = {
                 {association: "usuario"}
               ]
         }
-        db.Product.findAll(filtrado)
+        producto.findAll(filtrado)
         .then(function(results){
             return res.render('index', {title: "Home", productos: results});
         })

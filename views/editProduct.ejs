@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+
+<%-  include('./partials/head')%>
+
+<body>
+	<!-- Header -->
+	<%-  include('./partials/headerLogueado')%>
+	<!-- /Header -->
+
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Agregar productos</h2>
+			</div>
+			<h2 class="col-12"> 
+				<form action="/users/add" method="post">
+					<label for="imagen">Imagen:</label><br>
+					<input type="file" id="imagen" name="imagen" required><br>
+
+					<label for="product">Producto:</label><br>
+					<input type="text" id="product" name="product" required><br>
+
+					<label for="descripcion">Descripción:</label><br>
+					<input type="text" id="descripcion" name="descripcion" required><br>
+
+					<input type="submit" value="Agregar productos">
+				</form>
+			</h2>
+
+			<!-- Show the "ultimos" products -->
+			<%-  include('./partials/ultimosProductos')%>
+		</div>
+	</div>
+
+	<% if(locals.errors && errors.imagen){%>
+		<p><%= errors.imagen.msg %></p>
+	<% } %> 
+	<% if(locals.errors && errors.product){%>
+		<p><%= errors.product.msg %></p>
+	<% } %> 
+	<% if(locals.errors && errors.descripcion){%>
+		<p><%= errors.descripcion.msg %></p>
+	<% } %> 
+
+	<!-- footer -->
+	<%- include('./partials/footer') %>
+	<!-- /footer -->
+</body>
+
+</html>

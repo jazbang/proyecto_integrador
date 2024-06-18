@@ -86,11 +86,14 @@ const productController = {
             }
             let errors= validationResult(req);
             if(errors.isEmpty()){
-                producto.create({
+                producto.update({
                     imagen: req.body.imagen,
                     nombre:req.body.product,
                     descripcion:req.body.descripcion
-                })
+                },
+            {where:{
+                id:id
+            }})
                 res.redirect('/product') 
             }else{
                 return res.render('editProduct', { product: result, errors:errors.mapped() }); 

@@ -47,7 +47,7 @@ const usersController = {
     login: function(req,res){
         let errors= validationResult(req);
         if(errors.isEmpty()){
-            res.redirect('/')
+            res.redirect('/');
         }else{
             return res.render('login', {errors:errors.mapped()})
         }

@@ -19,16 +19,16 @@ module.exports = function(sequelize, dataTypes) {
         dni:{
             type: dataTypes.FLOAT,
         },
-        fotoPerfil:{
+        foto:{
             type: dataTypes.STRING,
         },
-        createdAt:{
+        created_at:{
             type: dataTypes.DATE,
         },
-        updatedAt:{
+        updated_at:{
             type: dataTypes.DATE,
         },
-        deletedAt:{
+        deleted_at:{
             type: dataTypes.DATE,
         },
     };

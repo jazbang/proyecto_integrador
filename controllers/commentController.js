@@ -13,7 +13,7 @@ const commentController = {
                 {association: 'producto'},
                 {association:'usuario'}
             ],
-            order:['createdAt', 'DESC']
+            order:[['created_at', 'DESC']]
         }
         
         comment.findAll(filtrado)

@@ -9,7 +9,7 @@ const usersController = {
     profile: function(req,res){
         let userId= req.session.id
         user.findByPk(userId,{
-            order:['createdAt', 'DESC'],
+            order:[['created_at', 'DESC']],
             include:[{association: 'productos'}]
         })
         .then(function(user){
@@ -35,7 +35,7 @@ const usersController = {
                 username:req.body.user,
                 password:passEncriptada,
                 dni:req.body.dni,
-                fotoPerfil:req.body.fotoPerfil,
+                foto:req.body.foto,
                 nacimiento:req.body.nacimiento
             })
             res.redirect('/')

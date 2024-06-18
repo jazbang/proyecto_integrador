@@ -5,8 +5,21 @@ let {validationResult} = require('express-validator');
 
 
 const productController = {
-    index: function(req, res, next) {
-        res.render('index', {product: db.productos})
+    index: function(req, res) {
+        let filtrado = {
+            order: [["createdAt", "DESC"]],
+            include: [
+                {association: "comentarios"},
+                {association: "usuario"}
+              ]
+        }
+        db.Product.findAll(filtrado)
+        .then(function(results){
+            return res.render('index', {title: "Home", productos: results});
+        })
+        .catch(function(error){
+            console.log(error);
+        });
     },
     products: function(req,res){
         res.render('product', {product: db.productos})

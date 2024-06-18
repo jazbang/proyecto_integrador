@@ -5,9 +5,9 @@
 <body>
 	<!-- Header -->
 	<% if (locals.user != undefined) { %> 
-		<% include('./partials/headerLogueado') %>
+		<%- include('./partials/headerLogueado') %>
 	<% } else { %>
-		<% include('./partials/header') %>
+		<%- include('./partials/header') %>
 	<% } %>
 	<!-- /Header -->
 	

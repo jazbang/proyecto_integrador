@@ -82,8 +82,55 @@ const usersController = {
         res.clearCookie("userId")
         return res.redirect("/")
     },
-    edit: function(req,res){
-        res.render('profile-edit', {product: db.productos, user: db.usuario})
+    edit: function(req, res, next) {
+        let id = req.session.user.id
+        let filtrado = {
+            include : [
+                {association : "product", },
+                {association: "comentario", }
+            ],
+        }
+        db.Usuario.findByPk(id, filtrado).then((result) => {
+            return res.render("profile-edit", {user: result});
+        })
+    },
+    editStore: function(req,res){
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+            let filtrado = {
+                where: {
+                    id: req.session.user.id
+                }
+            } 
+            let usuario = {
+                email: req.body.email,
+                username: req.body.user,
+                password: bcrypt.hashSync(req.body.password, 10),
+                nacimiento: req.body.nacimiento,
+                dni: req.body.dni,
+                foto: req.body.profile 
+            }
+            user.update(usuario, filtrado)
+            .then((result) => {
+                return res.redirect('/profile')
+            })
+            .catch((err) => {
+                return console.log(err);
+            });       
+        } 
+        else {
+            let id = req.session.user.id;
+            let filtrado = {
+                include : [
+                    {association : "product", },
+                    {association: "comentario", }
+                ],
+            }
+            db.Usuario.findByPk(id, filtrado).then((result) => {
+                return res.render('profile-edit', {title: "Profile Edit", errors: errors.mapped(), old: req.body, user: result
+                }); 
+            });
+        }
     }
 }
 

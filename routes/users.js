@@ -23,7 +23,7 @@ let registerValidations=[
         .notEmpty().withMessage('Por favor complete el campo con su nombre de usuario')
         .isString().withMessage('El campo debe ser de tipo texto'),
         //agregar de tipo texto y el custom para que no se repitan los nombres de usuarios
-    body('password')
+    body('contrasenia')
         .notEmpty().withMessage('Por favor complete el campo con su contraseña')
         .isLength({ min: 4 }).withMessage('Su contraseña debe tener al menos 4 caracteres'),
     body('dni')
@@ -47,7 +47,7 @@ let loginValidations= [
             }) 
         }),
     
-    body("password")
+    body("contrasenia")
         .notEmpty().withMessage("Porfavor complete la contraseña.")
         .custom(function(value, { req }){ 
             return db.Usuario.findOne({

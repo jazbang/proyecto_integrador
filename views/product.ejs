@@ -29,20 +29,24 @@
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<% for (let i = 0; i < comments.length; i++) {%>
-							<article>
-								<img src="<%=comments[i].user.foto%>" alt="foto de perfil del usuario que comentó">
-								<div class="data">
-									<p class="user">
-									<strong> <a href="/users/profile"><%=comments[i].user.username%>: </a> </strong>
-								 	<%=comments[i].comentario%></p>
-								</div>
-							</article>
+						<% if (comments && comments.length > 0) { %>
+							<% for (let i = 0; i < comments.length; i++) {%>
+								<article>
+									<img src="<%=comments[i].usuario.foto%>" alt="foto de perfil del usuario que comentó">
+									<div class="data">
+										<p class="user">
+										<strong> <a href="/users/profile/<%=comments[i].usuario.id%>"><%=comments[i].usuario.username%>: </a> </strong>
+								 		<%=comments[i].comentario%></p>
+									</div>
+								</article>
+							<% } %>
+						<% } else { %>
+							<p>No hay comentarios para este producto aún.</p>
 						<% } %>
 					</section>
 					<% if (locals.user != undefined) { %> 
 						<form class="form" action="/product" method="post">
-							<input class="form-input" type="text" id="agregarComment" name="agregarComment" value="" placeholder="Agregar comentario">
+							<input class="form-input" type="text" id="comentario" name="comentario" value="" placeholder="Agregar comentario">
 							<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 						</form>
 					<% } else { %>

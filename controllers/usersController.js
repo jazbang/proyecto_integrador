@@ -30,10 +30,10 @@ const usersController = {
         let errors= validationResult(req);
         //return res.send(errors.mapped());
         if(errors.isEmpty()){
-            let passEncriptada = bcrypt.hashSync(req.body.password, 10);
+            let passEncriptada = bcrypt.hashSync(req.body.contrasenia, 10);
             user.create({
                 username:req.body.user,
-                password:passEncriptada,
+                contrasenia:passEncriptada,
                 dni:req.body.dni,
                 foto:req.body.foto,
                 nacimiento:req.body.nacimiento
@@ -105,7 +105,7 @@ const usersController = {
             let usuario = {
                 email: req.body.email,
                 username: req.body.user,
-                password: bcrypt.hashSync(req.body.password, 10),
+                contrasenia: bcrypt.hashSync(req.body.contrasenia, 10),
                 nacimiento: req.body.nacimiento,
                 dni: req.body.dni,
                 foto: req.body.profile 

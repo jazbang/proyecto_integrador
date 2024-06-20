@@ -22,7 +22,12 @@ const productController = {
         });
     },
     products: function(req,res){
-        producto.findAll()
+        producto.findOne({
+            where:{id:req.params.id},
+            include: [
+                {association:'usuario'}
+            ]
+        })
         .then(function(data){
             return res.render('product', {product: data})
         })

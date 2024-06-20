@@ -10,15 +10,15 @@ const commentController = {
                 id_productos: productId
             },
             include: [
-                {association: 'producto'},
+                {association:'productos'},
                 {association:'usuario'}
             ],
             order:[['created_at', 'DESC']]
         }
         
         comment.findAll(filtrado)
-            .then(function(data){
-                return res.render('product', {comments: data})
+            .then(function(comments){
+                return res.render('product', {comments: comments})
             })
             .catch(function(error){
                 console.log(error);
@@ -30,7 +30,7 @@ const commentController = {
             comment.create({
                 id_productos: req.params.id,
                 id_usuarios: req.session.user.id, //no estoy segura si esto está bien, a chequear
-                comentario: req.body.agregarComment
+                comentario: req.body.comentario
             })
             res.redirect(`/product/${req.params.id}`)
         }else{

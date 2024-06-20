@@ -19,7 +19,7 @@ let productAddValidations=[
 
 router.get('/', productController.index);
 
-router.get('/product', productController.products);
+router.get('/product/:id', productController.products);
 router.get('/product', productController.encontrarUsuario);
 
 router.get('/editProduct', productController.edit)

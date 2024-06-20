@@ -53,7 +53,7 @@ const productController = {
         busqueda = req.query.search;
         let filtrado = {
             where: {
-                nombre: {[db.Sequelize.op.like]: "%" + busqueda + "%"}
+                nombre: {[db.Sequelize.Op.like]: "%" + busqueda + "%"}
             },
             include: [
                 {association: 'comentarios'}

@@ -23,14 +23,14 @@
                 products.forEach(function(producto, index) { %>
                 <div class="col-12 col-sm-6 col-lg-3">
                     <section class="product-box">
-                        <a href="/product/id/<%= productos.id %>">
+                        <a href="/product/id/<%= products.id %>">
                             <figure class="product-box_image">
-                                <img class="fotoIndex" src="<%= productos.imagen %>">
+                                <img class="fotoIndex" src="<%= products.imagen %>">
                             </figure>
                             <article class="product-box_data">
-                                <h2><%= productos.nombre %></h2>
-                                <p><%= productos.descripcion %></p>
-                                <p>Comentarios: <%= productos.comentarios.length %></p>
+                                <h2><%= products.nombre %></h2>
+                                <p><%= products.descripcion %></p>
+                                <p>Comentarios: <%= products.comentarios.length %></p>
                             </article>
                         </a>
                     </section>

@@ -38,12 +38,8 @@
 							<%=locals.user.username%> <i class="fas fa-user"></i>
 						</a>
 					</li>
-				<% } else { %>
-					<li>Bienvenido <a href="/users/profile">
-							<%=req.cookies.username%> <i class="fas fa-user"></i>
-						</a>
-					</li>
-				<% } %>
+					<% } %>
+						
 				<li>
 					<form action="/users/logout" method="post">
 						<button class="logout" type="submit">

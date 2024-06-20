@@ -62,20 +62,19 @@ const usersController = {
                 where: [{email:req.body.email}]
             })
             .then(function(usuarioEncontrado){
-                req.session.user = {
-                    email: usuarioEncontrado.email,
-                    username: usuarioEncontrado.username,
-                }
+                req.session.user = usuarioEncontrado
+
                 if(req.body.recordarme != undefined){
-                    res.cookie('recordarme', req.session.user, {maxAge:24*60*60*1000})
+                    res.cookie('recordarme',req.session.user, {maxAge:24*60*60*1000})
                 }
                 
                 return res.redirect('/');
             })
-              .catch(function(e){
-                console.log(e);
+              .catch(function(erorrs){
+                console.log(erorrs);
             })
         }else{
+            console.log(errors)
             return res.render('login', {errors:errors.mapped()})
         }
         

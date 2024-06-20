@@ -50,7 +50,7 @@ const usersController = {
     },
     login: function(req,res){
         if(req.session.user != undefined){
-            return res.redirect('/users/profile')
+            return res.redirect('/')
         } else {
             return res.render('login');
         }
@@ -69,7 +69,7 @@ const usersController = {
                     res.cookie('recordarme',req.session.user, {maxAge:24*60*60*1000})
                 }
                 
-                return res.redirect('/users/profile');
+                return res.redirect('/');
             })
               .catch(function(erorrs){
                 console.log(erorrs);

@@ -74,7 +74,7 @@ let editValidations = [
     body("user")
         .notEmpty().withMessage("Por favor, complete el campo usuario."),
 
-    body("nacimiento")
+    body("fecha")
         .notEmpty().withMessage("Por favor, seleccione su fecha de nacimiento.")
         .isDate().withMessage("Por favor, ingrese una fecha válida."),
 

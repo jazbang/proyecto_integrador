@@ -35,7 +35,7 @@ const usersController = {
         if(errors.isEmpty()){
             let passEncriptada = bcrypt.hashSync(req.body.contrasenia, 10);
             user.create({
-                username:req.body.user,
+                username:req.body.username,
                 contrasenia:passEncriptada,
                 dni:req.body.dni,
                 foto:req.body.foto,

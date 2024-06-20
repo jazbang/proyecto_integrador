@@ -40,7 +40,7 @@ const usersController = {
                 contrasenia:passEncriptada,
                 dni:req.body.dni,
                 foto:req.body.foto,
-                nacimiento:req.body.fecha
+                fecha:req.body.fecha
             })
             return res.redirect('/')
         }else{

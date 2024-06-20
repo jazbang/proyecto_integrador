@@ -1,5 +1,5 @@
 const db = require('../database/models');
-const user = db.User;
+const user = db.Usuario;
 //const db = require('../db/usuarios.js');
 const bcrypt= require('bcryptjs');
 let {validationResult} = require('express-validator');
@@ -35,11 +35,12 @@ const usersController = {
         if(errors.isEmpty()){
             let passEncriptada = bcrypt.hashSync(req.body.contrasenia, 10);
             user.create({
+                email: req.body.email,
                 username:req.body.username,
                 contrasenia:passEncriptada,
                 dni:req.body.dni,
                 foto:req.body.foto,
-                nacimiento:req.body.nacimiento
+                nacimiento:req.body.fecha
             })
             return res.redirect('/')
         }else{

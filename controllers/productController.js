@@ -53,7 +53,7 @@ const productController = {
         busqueda = req.query.search;
         let filtrado = {
             where: {
-                nombre: {[db.Sequelize.op.like]: "%" + busqueda + "%"}
+                nombre: {[db.Sequelize.Op.like]: "%" + busqueda + "%"}
             },
             include: [
                 {association: 'comentarios'}
@@ -61,7 +61,7 @@ const productController = {
         }
         producto.findAll(filtrado)
             .then(function(resultados){
-                return res.render('search-results', {title: `Resultados de la búsqueda: ${busqueda}`, products: resultados})
+                return res.render('search-results', {title: `Resultados de la búsqueda: ${busqueda}`, productos: resultados})
             })
             .catch(function(error){
                 console.log(error);

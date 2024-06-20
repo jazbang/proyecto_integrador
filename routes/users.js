@@ -20,7 +20,7 @@ let registerValidations=[
                 }
             })
         }),
-    body('user')
+    body('username')
         .notEmpty().withMessage('Por favor complete el campo con su nombre de usuario')
         .isString().withMessage('El campo debe ser de tipo texto'),
         //agregar de tipo texto y el custom para que no se repitan los nombres de usuarios

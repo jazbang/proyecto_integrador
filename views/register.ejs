@@ -20,8 +20,8 @@
 				<label for="email">Email:</label><br>
 				<input type="email" id="email" name="email" value="" ><br>
 				
-				<label for="user">Usuario:</label><br>
-				<input type="text" id="user" name="user" value="" ><br>
+				<label for="username">Usuario:</label><br>
+				<input type="text" id="username" name="user" value="" ><br>
 
 				<label for="contrasenia">Contraseña:</label><br>
 				<input type="password" id="contrasenia" name="contrasenia" value="" ><br>
@@ -45,8 +45,8 @@
 	<% if(locals.errors && errors.contrasenia){ %>
 		<p><%= errors.contrasenia.msg %></p>
 	<% } %>
-	<% if(locals.errors && errors.user){%>
-		<p><%= errors.user.msg %></p>
+	<% if(locals.errors && errors.username){%>
+		<p><%= errors.username.msg %></p>
 	<%} %>
 	<% if(locals.errors && errors.dni){%>
 		<p><%= errors.dni.msg %></p>

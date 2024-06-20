@@ -8,14 +8,13 @@ let registerValidations=[
     body('email')
         .notEmpty().withMessage('Por favor complete el campo email')
         .isEmail().withMessage('Por favor ingrese un email válido')
-        .custom(function(value){
+        .custom(function(value, { req }){
             return db.Usuario.findOne({
                 where:{email: value},
             })
             .then(function(user){
                 if(user){
-                    throw new Error ('El mail ingresado ya está registrado, por favor inicie sesion ');
-
+                    throw new Error ('El mail ingresado ya está registrado, por favor inicie sesión');
                 }
             })
         }),

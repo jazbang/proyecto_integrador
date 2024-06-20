@@ -67,21 +67,6 @@ const productController = {
                 console.log(error);
             });   
     },
-    encontrarUsuario: function(req,res){
-        let id= req.params.id
-        producto.findByPk(id,{
-            include: [{association: 'usuario'}]
-        })
-        .then(function(result){
-            if (!result){
-                return res.send('Producto no encontrado')
-            }
-            res.render('product', {product: result}); // el result contiene info del producto y la asociacion del usuario
-        })
-        .catch(function(error){
-            console.log(error);
-        })
-    },
     edit: function(req,res){
         let id= req.params.id
         let userId = req.usuario.id; //chequear si aca trae el id del usuario ya logueado

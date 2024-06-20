@@ -29,7 +29,7 @@ let registerValidations=[
         .isLength({ min: 4 }).withMessage('Su contraseña debe tener al menos 4 caracteres'),
     body('dni')
         .isInt().withMessage('Por favor complete el campo con numeros enteros'),
-    body('fotoPerfil')
+    body('foto')
         .isString().withMessage('El campo debe ser de tipo texto'),
 ];
 

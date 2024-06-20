@@ -53,7 +53,7 @@ const usersController = {
     },
     loginProcess: function(req, res){
         let errors= validationResult(req);
-        
+
         if(errors.isEmpty()){
             user.findOne({
                 where: [{email:req.body.email}]
@@ -66,7 +66,7 @@ const usersController = {
                 if(req.body.recordarme != undefined){
                     res.cookie('recordarme', req.session.user, {maxAge:24*60*60*1000})
                 }
-
+                
                 return res.redirect('/');
             })
               .catch(function(e){

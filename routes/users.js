@@ -92,7 +92,7 @@ let editValidations = [
 router.get('/profile', usersController.profile);
 
 router.get('/register', usersController.register);
-router.post('/register',registerValidations, usersController.register);
+router.post('/register',registerValidations, usersController.registerProcess);
 
 router.get('/edit', usersController.edit);
 router.post('/edit', editValidations, usersController.editStore)

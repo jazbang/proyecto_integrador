@@ -10,11 +10,11 @@ const usersController = {
         let userId= req.session.id
         user.findByPk(userId,{
             order:[['created_at', 'DESC']],
-            include:[{association: 'productos'}]
+            include:[{association: 'productos'}, ]
         })
         .then(function(user){
             if(user){
-                return res.render('profile',{productos:user.Products});
+                return res.render('profile',{user:user});
             } else{
                 let mensaje= 'Usted no ha cargado ningún producto'
                 return res.render('profile', {mensaje:mensaje})
@@ -26,6 +26,7 @@ const usersController = {
         })
        // res.render('profile', {product: db.productos, user: db.usuario})
     },
+
     register: function(req,res){
         return res.render('register');
     },

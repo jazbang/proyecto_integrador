@@ -10,8 +10,8 @@ let commentValidations= [
 ];
 
 //para obtener comentarios de un producto, y envía formulario de creación
-router.get('/products/:id/comments', commentController.comments);
+router.get('/product/:id', commentController.comments);
 //para agregar comentario a un producto
-router.post('/products/:id/comments', commentValidations, commentController.addComment);
+router.post('/product/:id', commentValidations, commentController.addComment);
 
 module.exports=router;

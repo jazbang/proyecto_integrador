@@ -29,7 +29,7 @@
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<% if (comments && comments.length > 0) { %>
+						<% if (comments!=undefined && comments.length > 0) { %>
 							<% for (let i = 0; i < comments.length; i++) {%>
 								<article>
 									<img src="<%=comments[i].usuario.foto%>" alt="foto de perfil del usuario que comentó">
@@ -62,7 +62,7 @@
 		</div>
 	</div>
 	
-	<% if(locals.errors && errors.agregarComment){%>
+	<% if(locals.errors && errors.comentario){%>
 		<p><%= errors.agregarComment.msg %></p>
 	<% } %> 
 	<% if(locals.errors && errors.edit){%>

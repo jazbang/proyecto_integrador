@@ -10,7 +10,6 @@ const commentController = {
                 id_productos: productId
             },
             include: [
-                {association:'productos'},
                 {association:'usuario'}
             ],
             order:[['created_at', 'DESC']]

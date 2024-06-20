@@ -66,7 +66,7 @@ let loginValidations= [
 router.get('/profile', usersController.profile);
 
 router.get('/register', usersController.register);
-router.post('/register',registerValidations, usersController.register);
+router.post('/register',registerValidations, usersController.registerProcess);
 
 router.get('/edit', usersController.edit);
 

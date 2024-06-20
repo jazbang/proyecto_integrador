@@ -27,6 +27,9 @@ const usersController = {
        // res.render('profile', {product: db.productos, user: db.usuario})
     },
     register: function(req,res){
+        return res.render('register');
+    },
+    registerProcess: function(req,res){
         let errors= validationResult(req);
         //return res.send(errors.mapped());
         if(errors.isEmpty()){

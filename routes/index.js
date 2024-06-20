@@ -27,7 +27,7 @@ router.post('/editProduct', productAddValidations, productController.edit)
 router.get('/product', productController.del)
 
 
-router.get('/add', productController.agregarProducto);
+router.get('/add', productController.productAdd);
 router.post('/add', productAddValidations, productController.agregarProducto);
 
 router.get('/search-results', productController.searchResults);

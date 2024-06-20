@@ -35,6 +35,9 @@ const productController = {
             console.log(error);
         });   
     },
+    productAdd:function(req,res){
+        return res.render('product-add');
+    },
     agregarProducto:function(req,res){
         let errors= validationResult(req);
         //return res.send(errors.mapped());

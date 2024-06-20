@@ -55,7 +55,7 @@ let loginValidations= [
                 where: {email: req.body.email},
             })
             .then(function(user){
-                if(user && !bcrypt.compareSync(req.body.contrasenia, user.contrasenia) ){ 
+                if(user && !bcrypt.compareSync(value, user.contrasenia) ){ 
                     throw new Error("La contraseña es incorrecta.")
                 }
             }) 

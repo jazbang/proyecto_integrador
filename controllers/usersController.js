@@ -49,7 +49,7 @@ const usersController = {
     },
     login: function(req,res){
         if(req.session.user != undefined){
-            return res.redirect('/')
+            return res.redirect('/users/profile')
         } else {
             return res.render('login');
         }
@@ -59,7 +59,7 @@ const usersController = {
 
         if(errors.isEmpty()){
             user.findOne({
-                where: [{email:req.body.email}]
+                where: {email:req.body.email}
             })
             .then(function(usuarioEncontrado){
                 req.session.user = usuarioEncontrado
@@ -68,13 +68,12 @@ const usersController = {
                     res.cookie('recordarme',req.session.user, {maxAge:24*60*60*1000})
                 }
                 
-                return res.redirect('/');
+                return res.redirect('/users/profile');
             })
               .catch(function(erorrs){
                 console.log(erorrs);
             })
         }else{
-            console.log(errors)
             return res.render('login', {errors:errors.mapped()})
         }
         
@@ -114,7 +113,7 @@ const usersController = {
             }
             user.update(usuario, filtrado)
             .then((result) => {
-                return res.redirect('/profile')
+                return res.redirect('/')
             })
             .catch((err) => {
                 return console.log(err);

@@ -23,36 +23,21 @@ const commentController = {
 
             let filtrado = {
                 where: {
-                    id: productId
+                    id_productos: productId
                 },
                 include: [
-                    { association: 'usuario' },
-                    { 
-                        association: 'comentarios', 
-                        include: [{ association: 'usuario' }],
-                        order: [['created_at', 'DESC']]
-                    }
+                    {association: 'producto'},
+                    {association:'usuario'}
                 ]
             }
-
-            db.Product.findOne(filtrado)
-                .then(function(product) {
-                    let condition = false;
-                    if (req.session.user != undefined && req.session.user.id == product.usuario.id) {
-                        condition = true;
-                    }
-
-                    return res.render('product', {
-                        product: product,
-                        comments: product.comentarios,
-                        condition: condition,
-                        errors: errors.mapped(),
-                        old: req.body
-                    });
+    
+            comment.findAll(filtrado)
+                .then(function(data){
+                    return res.render('product', {comments: data})
                 })
-                .catch(function(error) {
+                .catch(function(error){
                     console.log(error);
-                });
+                });   
         }
     },
     addComment:function(req,res){

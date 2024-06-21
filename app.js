@@ -35,6 +35,23 @@ app.use(function(req,res,next){
   return next();
 });
 
+////Revisar cookie recordame
+app.use(function(req, res, next){
+  if(req.cookies.recordarme!==undefined && req.session.user==undefined){
+    db.User.findOne({
+      where: {email:req.cookies.recordarme}
+    })
+      .then(function(user){
+        req.session.user = user;
+        res.locals.user = user;
+        return next();
+      })
+      .catch(e => console.log(e))
+  } else {
+    return next(); 
+  }
+});
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/', commentRouter);

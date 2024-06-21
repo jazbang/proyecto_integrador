@@ -67,7 +67,7 @@ const usersController = {
                 req.session.user = usuarioEncontrado
 
                 if(req.body.recordarme != undefined){
-                    res.cookie('recordarme',usuarioEncontrado.id, {maxAge:24*60*60*1000})
+                    res.cookie('recordarme',usuarioEncontrado.email, {maxAge:24*60*60*1000})
                 }
                 
                 return res.redirect('/');

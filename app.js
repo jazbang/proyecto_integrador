@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const db= require('./database/models')
 const session = require('express-session');
 
 var indexRouter = require('./routes/index');
@@ -38,7 +39,7 @@ app.use(function(req,res,next){
 ////Revisar cookie recordame
 app.use(function(req, res, next){
   if(req.cookies.recordarme!==undefined && req.session.user==undefined){
-    db.User.findOne({
+    db.Usuario.findOne({
       where: {email:req.cookies.recordarme}
     })
       .then(function(user){

@@ -21,13 +21,12 @@ const usersController = {
         user.findAll(filtrado)
         .then(function(results){
             return res.render('profile', {productos: results})
+            
         })
         .catch(function(error){
             return console.log(error)
-
         })
     },
-
     register: function(req,res){
         return res.render('register');
     },

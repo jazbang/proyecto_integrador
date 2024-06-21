@@ -15,7 +15,7 @@ let registerValidations=[
             })
             .then(function(user){
                 if(user){
-                    throw new Error ('El mail ingresado ya está registrado, por favor inicie sesion ');
+                    throw new Error ('El mail ingresado ya está registrado, por favor inicie sesión ');
 
                 }
             })
@@ -99,6 +99,7 @@ let editValidations = [
 
 /* GET users listing. */
 router.get('/profile', usersController.profile);
+router.get('/profile', usersController.profileProcess);
 
 router.get('/register', usersController.register);
 router.post('/register',registerValidations, usersController.registerProcess);

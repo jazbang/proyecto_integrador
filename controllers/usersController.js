@@ -7,6 +7,9 @@ let {validationResult} = require('express-validator');
 
 const usersController = {
     profile: function(req,res){
+        return res.render('profile')
+    },
+    profileProcess: function(req,res){
         let userId= req.session.id
         let filtrado = {
             include:[

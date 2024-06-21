@@ -72,7 +72,7 @@ const usersController = {
                 
                 return res.redirect('/');
             })
-              .catch(function(erorrs){
+            .catch(function(erorrs){
                 console.log(erorrs);
             })
         }else{

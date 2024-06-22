@@ -78,36 +78,38 @@ const productController = {
                 console.log(error);
             });   
     },
-    edit: function(req,res){
+    edit:function(req,res){
+        return res.render('editProduct')
+    },
+    editProcess: function(req,res){
         let id= req.params.id //id del producto
         producto.findByPk(id,{
             include: [{association: 'usuario'}]
         })
         .then(function(result){
-            if(!result){ //verifica si el producto existe en la base de datos
-                return res.send('Este producto no existe');
-            }
             let userId = req.session.id; // id del usuario ya logueado
-            if(result.usuario.id !==userId){
-                return res.send('Usted no puede editar este producto')
-            }
-            let errors= validationResult(req);
-            if(errors.isEmpty()){
-                producto.update({
-                    imagen: req.body.imagen,
-                    nombre:req.body.product,
-                    descripcion:req.body.descripcion
-                },
-                {where:{id:id}})
-                .then(function(resultados){
-                    res.redirect('/product') 
-                })
-                .catch(function(error){
-                    console.log(error);
-                }); 
-            }else{
-                return res.render('editProduct', { product: result, errors:errors.mapped() }); 
-            }    
+            if (userId){
+                if(result.usuario.id !==userId){
+                    return res.send('Usted no puede editar este producto')
+                }
+                let errors= validationResult(req);
+                if(errors.isEmpty()){
+                    producto.update({
+                        imagen: req.body.imagen,
+                        nombre:req.body.product,
+                        descripcion:req.body.descripcion
+                    },
+                    {where:{id:id}})
+                    .then(function(resultados){
+                        res.redirect('/product') 
+                    })
+                    .catch(function(error){
+                        console.log(error);
+                    }); 
+                }else{
+                    return res.render('editProduct', { product: result, errors:errors.mapped() }); 
+                } 
+            }   
         }) 
         .catch(function(error){
             console.log(error);

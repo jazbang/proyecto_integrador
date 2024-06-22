@@ -22,7 +22,7 @@ router.get('/', productController.index);
 router.get('/product/:id', productController.products);
 
 router.get('/editProduct', productController.edit)
-router.post('/editProduct', productAddValidations, productController.edit) 
+router.post('/editProduct/:id', productAddValidations, productController.editProcess) 
 
 router.get('/product', productController.del)
 

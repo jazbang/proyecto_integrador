@@ -17,7 +17,7 @@
 			<h2 class="products-title"><%= product.nombre %></h2> 
 			<p class="product-detail-description">
 				<% if (locals.user && locals.user.id == product.id_usuarios) { %>
-					<form class="form" action="/editProduct/<%= product.id %>" method="post" >
+					<form class="form" action="/product/editProduct/<%= product.id %>" method="post" >
 						<button type="submit" name="editar" id="editar">Editar</button>
 					</form>
 				<% } %>

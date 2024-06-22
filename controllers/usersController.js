@@ -89,8 +89,8 @@ const usersController = {
         let id = req.session.user.id
         let filtrado = {
             include : [
-                {association : "productos", },
-                {association: "comentarios", }
+                {association : "productos"},
+                {association: "comentarios"}
             ],
         }
         db.Usuario.findByPk(id, filtrado).then((result) => {

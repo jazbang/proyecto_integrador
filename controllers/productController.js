@@ -79,7 +79,7 @@ const productController = {
             });   
     },
     edit:function(req,res){
-        return res.render('editProduct')
+        return res.render('editProduct');
     },
     editProcess: function(req,res){
         if (req.body.editar){

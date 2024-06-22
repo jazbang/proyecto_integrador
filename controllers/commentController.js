@@ -27,13 +27,13 @@ const commentController = {
                     order:[['created_at', 'DESC']]}
                 ]
             })
-            .then(function(data){
-                let comments= data.comentarios;
-                return res.render('product', {product: data, comments:comments,errors:errors.mapped()})
-            })
-            .catch(function(error){
-                console.log(error);
-            });
+                .then(function(data){
+                    let comments= data.comentarios;
+                    return res.render('product', {product: data, comments:comments,errors:errors.mapped()})
+                })
+                .catch(function(error){
+                    console.log(error);
+                });
       
         }
     }

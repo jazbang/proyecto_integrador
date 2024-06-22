@@ -17,8 +17,12 @@
 			<h2 class="products-title"><%= product.nombre %></h2> 
 			<p class="product-detail-description">
 				<% if (locals.user.id == product.id_usuarios) { %>
-					<a href="/editProduct/<%= product.id %>">Editar</a>
-					<a href="/">Borrar</a>
+					<form class="form" action="/editProduct/<%= product.id %>" method="post">
+						<button type="submit" class="buy-now-button" name="editar">Editar</button>
+					</form>
+					<form class="form" action="/" method="post">
+						<button type="submit" class="buy-now-button" name="borrar">Borrar</button>
+					</form>
 				<% } %>
 			</p>
 		</div>

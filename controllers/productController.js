@@ -116,17 +116,18 @@ const productController = {
         });
     },
     del:function(req,res){
-        let id= req.params.id;
-        producto.destroy(
-            {where:[{id:id}]}
-        )
-        .then(function(result){
-            return res.redirect('/')
-        })
-        .catch(function(error){
-            console.log(error);
-        })
-        
+        if (borrar){
+            let id= req.params.id;
+            producto.destroy(
+                {where:[{id:id}]}
+            )
+            .then(function(result){
+                    return res.redirect('/')
+            })
+            .catch(function(error){
+                console.log(error);
+            })
+        }
     }
 }
 

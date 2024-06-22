@@ -24,43 +24,23 @@ const productController = {
     products: function(req,res){
         let errors= validationResult(req);
 
-        if(errors.isEmpty()){
-            producto.findOne({
-                where:{id:req.params.id},
-                include: [
-                    {association:'usuario'},
-                    {association:'comentarios',
-                    include:[{association:'usuario'}],
-                    order:[['created_at', 'DESC']]}
-                ]
-            })
-            .then(function(data){
-                let comments= data.comentarios;
-                return res.render('product', {product: data, comments:comments})
-            })
-            .catch(function(error){
-                console.log(error);
-            });
-        }else{
-            producto.findOne({
-                where:{id:req.params.id},
-                include: [
-                    {association:'usuario'},
-                    {association:'comentarios',
-                    include:[{association:'usuario'}],
-                    order:[['created_at', 'DESC']]}
-                ]
-            })
-            .then(function(data){
-                let comments= data.comentarios;
-                return res.render('product', {product: data, comments:comments,errors:errors.mapped()})
-            })
-            .catch(function(error){
-                console.log(error);
-            });
-        }
+        producto.findOne({
+            where:{id:req.params.id},
+            include: [
+                {association:'usuario'},
+                {association:'comentarios',
+                include:[{association:'usuario'}],
+                order:[['created_at', 'DESC']]}
+            ]
+        })
+        .then(function(data){
+            let comments= data.comentarios;
+            return res.render('product', {product: data, comments:comments})
+        })
+        .catch(function(error){
+            console.log(error);
+        });
 
-        
     },
     productAdd:function(req,res){
         return res.render('product-add');

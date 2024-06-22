@@ -17,16 +17,9 @@ let productAddValidations=[
         .isString().withMessage('Por favor complete con el campo con el nombre del archivo'),
 ];
 
-let commentValidations= [
-    body("comentario") 
-        .notEmpty().withMessage("No puede enviar un comentario vacío.")
-        .isLength({min:3}).withMessage("El comentario debe tener al menos 3 caracteres.")
-];
-
 router.get('/', productController.index);
 
 router.get('/product/:id', productController.products);
-router.post('/product/:id', commentValidations, productController.products);
 
 router.get('/editProduct', productController.edit)
 router.post('/editProduct', productAddValidations, productController.edit) 

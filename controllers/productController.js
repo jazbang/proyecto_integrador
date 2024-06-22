@@ -75,16 +75,16 @@ const productController = {
             });   
     },
     edit: function(req,res){
-        let id= req.params.id
-        let userId = req.usuario.id; //chequear si aca trae el id del usuario ya logueado
+        let id= req.params.id //id del producto
         producto.findByPk(id,{
             include: [{association: 'usuario'}]
         })
         .then(function(result){
-            if(!result){
-                return res.send('No se encuentra el producto')
+            if(!result){ //verifica si el producto existe en la base de datos
+                return res.send('Este producto no existe');
             }
-            if(id!==userId){
+            let userId = req.session.id; // id del usuario ya logueado
+            if(result.usuario.id !==userId){
                 return res.send('Usted no puede editar este producto')
             }
             let errors= validationResult(req);
@@ -94,16 +94,20 @@ const productController = {
                     nombre:req.body.product,
                     descripcion:req.body.descripcion
                 },
-            {where:{
-                id:id
-            }})
-                res.redirect('/product') 
+                {where:{id:id}})
+                .then(function(resultados){
+                    res.redirect('/product') 
+                })
+                .catch(function(error){
+                    console.log(error);
+                }); 
             }else{
                 return res.render('editProduct', { product: result, errors:errors.mapped() }); 
-            }
-                
-        
+            }    
         }) 
+        .catch(function(error){
+            console.log(error);
+        });
     },
     del:function(req,res){
         let id= req.params.id

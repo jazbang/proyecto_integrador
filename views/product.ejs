@@ -25,7 +25,11 @@
 					<img src="<%= product.imagen %>" alt="" class="product-detail-img">
 					<p class="product-detail-description">
 						<%= product.descripcion %></p>
-					<p>Usuario que cargó el producto: <a href="profile"> <%= product.usuario.username%> </a></p>
+						<% if (product.usuario) { %>
+							<h2>Usuario que cargó el producto: <a href="profile"> <%= product.usuario.username%> </a></h2>
+						<% } else { %>
+							<h2>Usted cargo este producto.</h2>
+						<% } %>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">

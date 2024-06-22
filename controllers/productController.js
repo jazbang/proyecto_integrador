@@ -49,7 +49,8 @@ const productController = {
             producto.create({
                 imagen: req.body.imagen,
                 nombre:req.body.product,
-                descripcion:req.body.descripcion
+                descripcion:req.body.descripcion,
+                id_usuarios: req.session.user.id
             })
             res.redirect('/') //hacia index porque tenes que poder ver los productos en el orden de más reciente a más viejo 
         }else{

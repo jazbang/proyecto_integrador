@@ -116,28 +116,17 @@ const productController = {
         });
     },
     del:function(req,res){
-        let id= req.params.id
-        let userId = req.user.id; //chequear si aca trae el id del usuario ya logueado
-        producto.findOne(
-            {where: { id:id }}
+        let id= req.params.id;
+        producto.destroy(
+            {where:[{id:id}]}
         )
-        .then(function(user){
-            if (!user){
-                return res.send('No se encuentra el producto')
-            }
-            if(id!==userId){
-                return res.send('Usted no puede borar este producto')
-            }
-            producto.destroy(
-                {where:[{id:id}]}
-            )
-            .then(function(result){
-                return res.redirect('/products')
-            })
-            .catch(function(error){
-                console.log(error);
-            })
+        .then(function(result){
+            return res.redirect('/')
         })
+        .catch(function(error){
+            console.log(error);
+        })
+        
     }
 }
 

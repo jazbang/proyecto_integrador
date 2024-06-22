@@ -16,7 +16,7 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= product.nombre %></h2> 
 			<p class="product-detail-description">
-				<% if (locals.user == product.usuario) { %>
+				<% if (locals.user.id == product.id_usuarios) { %>
 					<a href="/editProduct/<%= product.id %>">Editar</a>
 					<a href="/">Borrar</a>
 				<% } %>

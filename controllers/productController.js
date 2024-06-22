@@ -89,7 +89,7 @@ const productController = {
         if (req.body.editar){
             let errors= validationResult(req);
                 if(errors.isEmpty()){
-                    producto.update({
+                    producto.update(req.body, {
                         imagen: req.body.imagen,
                         nombre:req.body.product,
                         descripcion:req.body.descripcion

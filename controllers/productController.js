@@ -25,11 +25,15 @@ const productController = {
         producto.findOne({
             where:{id:req.params.id},
             include: [
-                {association:'usuario'}
+                {association:'usuario'},
+                {association:'comentarios',
+                include:[{association:'usuario'}],
+                order:[['created_at', 'DESC']]}
             ]
         })
         .then(function(data){
-            return res.render('product', {product: data})
+            let comments= data.comentarios;
+            return res.render('product', {product: data, comments:comments})
         })
         .catch(function(error){
             console.log(error);

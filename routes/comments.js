@@ -9,8 +9,6 @@ let commentValidations= [
         .isLength({min:3}).withMessage("El comentario debe tener al menos 3 caracteres.")
 ];
 
-//para obtener comentarios de un producto, y envía formulario de creación
-router.get('/product/:id', commentController.comments);
 //para agregar comentario a un producto
 router.post('/product/:id', commentValidations, commentController.addComment);
 

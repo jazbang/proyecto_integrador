@@ -8,12 +8,10 @@ const commentController = {
         if(errors.isEmpty()){
             comment.create({
                 id_productos: req.params.id,
-                id_usuarios: req.session.user.id, //no estoy segura si esto está bien, a chequear
+                id_usuarios: req.session.user.id, 
                 comentario: req.body.comentario
             })
             res.redirect(`/product/${req.params.id}`)
-        }else{
-            return res.render('product', {errors:errors.mapped()})
         }
     }
 }

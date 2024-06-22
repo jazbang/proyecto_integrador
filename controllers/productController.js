@@ -116,7 +116,7 @@ const productController = {
         });
     },
     del:function(req,res){
-        if (borrar){
+        if (req.body.borrar){
             let id= req.params.id;
             producto.destroy(
                 {where:[{id:id}]}

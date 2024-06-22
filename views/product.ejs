@@ -16,12 +16,16 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= product.nombre %></h2> 
 			<p class="product-detail-description">
-				<% if (locals.user.id == product.id_usuarios) { %>
-					<form class="form" action="/editProduct/<%= product.id %>" method="post">
-						<button type="submit" class="buy-now-button" name="editar">Editar</button>
+				<% if (locals.user && locals.user.id == product.id_usuarios) { %>
+					<form class="form" action="/editProduct/<%= product.id %>" method="post" >
+						<button type="submit" name="editar" id="editar">Editar</button>
 					</form>
-					<form class="form" action="/" method="post">
-						<button type="submit" class="buy-now-button" name="borrar">Borrar</button>
+				<% } %>
+			</p>
+			<p class="product-detail-description">
+				<% if (locals.user && locals.user.id == product.id_usuarios) { %>
+					<form class="form" action="/product/<%= product.id %>" method="post">
+						<button type="submit" name="borrar" id="borrar">Borrar</button>
 					</form>
 				<% } %>
 			</p>

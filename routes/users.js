@@ -98,8 +98,7 @@ let editValidations = [
 
 
 /* GET users listing. */
-router.get('/profile', usersController.profile);
-router.post('/profile', usersController.profileProcess);
+router.get('/profile', usersController.profileProcess);
 
 router.get('/register', usersController.register);
 router.post('/register',registerValidations, usersController.registerProcess);

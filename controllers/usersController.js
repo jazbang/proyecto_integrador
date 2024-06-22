@@ -6,9 +6,6 @@ let {validationResult} = require('express-validator');
 
 
 const usersController = {
-    profile: function(req,res){
-        return res.render('profile')
-    },
     profileProcess: function(req,res){
         let userId= req.session.id
         let filtrado = {
@@ -20,8 +17,11 @@ const usersController = {
         }
         user.findAll(filtrado)
         .then(function(results){
-            return res.render('profile', {productos: results})
-            
+            if (results){
+                return res.render('profile', {productos: results})
+            } else{
+                return res.render('profile')
+            }
         })
         .catch(function(error){
             return console.log(error)

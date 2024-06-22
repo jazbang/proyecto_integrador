@@ -22,8 +22,6 @@ const productController = {
         });
     },
     products: function(req,res){
-        let errors= validationResult(req);
-
         producto.findOne({
             where:{id:req.params.id},
             include: [
@@ -55,7 +53,13 @@ const productController = {
                 descripcion:req.body.descripcion,
                 id_usuarios: req.session.user.id
             })
-            res.redirect('/') //hacia index porque tenes que poder ver los productos en el orden de más reciente a más viejo 
+            .then(function(data){
+                res.redirect('/')
+            })
+            .catch(function(error){
+                console.log(error);
+            });
+             //hacia index porque tenes que poder ver los productos en el orden de más reciente a más viejo 
         }else{
             return res.render('product-add', {errors:errors.mapped()})
         }

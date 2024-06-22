@@ -82,17 +82,8 @@ const productController = {
         return res.render('editProduct')
     },
     editProcess: function(req,res){
-        let id= req.params.id //id del producto
-        producto.findByPk(id,{
-            include: [{association: 'usuario'}]
-        })
-        .then(function(result){
-            let userId = req.session.id; // id del usuario ya logueado
-            if (userId){
-                if(result.usuario.id !==userId){
-                    return res.send('Usted no puede editar este producto')
-                }
-                let errors= validationResult(req);
+        if (req.body.editar){
+            let errors= validationResult(req);
                 if(errors.isEmpty()){
                     producto.update({
                         imagen: req.body.imagen,
@@ -109,11 +100,7 @@ const productController = {
                 }else{
                     return res.render('editProduct', { product: result, errors:errors.mapped() }); 
                 } 
-            }   
-        }) 
-        .catch(function(error){
-            console.log(error);
-        });
+        }
     },
     del:function(req,res){
         if (req.body.borrar){
@@ -130,5 +117,4 @@ const productController = {
         }
     }
 }
-
 module.exports = productController;

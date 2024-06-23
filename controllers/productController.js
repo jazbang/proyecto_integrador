@@ -83,7 +83,12 @@ const productController = {
             });   
     },
     edit:function(req,res){
-        return res.render('editProduct');
+        let id = req.params.id
+        producto.findByPk(id)
+        .then(function(result){
+            //return res.send(result)
+            return res.render('editProduct', {product: result});
+        })
     },
     editProcess: function(req,res){
         if (req.body.editar){

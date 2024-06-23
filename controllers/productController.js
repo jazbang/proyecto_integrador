@@ -89,20 +89,27 @@ const productController = {
             //return res.send(result)
             return res.render('editProduct', {product: result});
         })
+        .catch(function(error){
+            console.log(error);
+        }) 
     },
     editProcess: function(req,res){
         if (req.body.editar){
             let errors= validationResult(req);
                 if(errors.isEmpty()){
-                    let form= req.body
-                    producto.update(form,{where: [{id:form.id}]}) 
-                    .then(function(resultado){
-                        res.redirect('/') 
+                    producto.update(req.body, {
+                        imagen: req.body.imagen,
+                        nombre:req.body.product,
+                        descripcion:req.body.descripcion
+                    },
+                    {where:{id:id}})
+                    .then(function(resultados){
+                        res.redirect('/product') 
                     })
                     .catch(function(error){
                         console.log(error);
-                    }) 
-                }else{
+                    }); 
+                } else{
                     return res.render('editProduct', { product: result, errors:errors.mapped() }); 
                 } 
         }

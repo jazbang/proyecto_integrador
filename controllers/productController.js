@@ -82,7 +82,7 @@ const productController = {
                 console.log(error);
             });   
     },
-    edit:function(req,res){
+    editProduct:function(req,res){
         let id = req.params.id
         producto.findByPk(id)
         .then(function(result){

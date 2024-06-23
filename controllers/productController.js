@@ -94,18 +94,14 @@ const productController = {
         if (req.body.editar){
             let errors= validationResult(req);
                 if(errors.isEmpty()){
-                    producto.update(req.body, {
-                        imagen: req.body.imagen,
-                        nombre:req.body.product,
-                        descripcion:req.body.descripcion
-                    },
-                    {where:{id:id}})
-                    .then(function(resultados){
-                        res.redirect('/product') 
+                    let form= req.body
+                    producto.update(form,{where: [{id:form.id}]}) 
+                    .then(function(resultado){
+                        res.redirect('/') 
                     })
                     .catch(function(error){
                         console.log(error);
-                    }); 
+                    }) 
                 }else{
                     return res.render('editProduct', { product: result, errors:errors.mapped() }); 
                 } 

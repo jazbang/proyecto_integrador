@@ -17,14 +17,15 @@
 			</div>
 			<h2 class="col-12"> 
 				<form action="/users/add" method="post">
+                    <input type="hidden" name="id" value="<%= product.id%>" >
 					<label for="imagen">Imagen:</label><br>
-					<input type="file" id="imagen" name="imagen" required><br>
+					<input type="text" id="imagen" name="imagen" value ='<%= product.imagen%>'required><br>
 
 					<label for="product">Producto:</label><br>
-					<input type="text" id="product" name="product" required><br>
+					<input type="text" id="product" name="nombre" value ='<%= product.nombre%>' required><br>
 
 					<label for="descripcion">Descripción:</label><br>
-					<input type="text" id="descripcion" name="descripcion" required><br>
+					<input type="text" id="descripcion" name="descripcion" value ='<%= product.descripcion%>'required><br>
 
 					<input type="submit" value="Agregar productos">
 				</form>

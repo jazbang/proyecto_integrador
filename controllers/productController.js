@@ -7,7 +7,6 @@ let {validationResult} = require('express-validator');
 const productController = {
     index: function(req, res) {
         let filtrado = {
-            order: [["created_at", "DESC"]],
             include: [
                 {association: "comentarios"},
                 {association: "usuario"}
@@ -15,7 +14,8 @@ const productController = {
         }
         producto.findAll(filtrado)
         .then(function(results){
-            return res.render('index', {title: "Home", productos: results});
+            let orden= results.reverse(); //con order no se ordenaba DESC, solo salía lo más reciente cuando agrego producto, por eso puse .reverse()
+            return res.render('index', {title: "Home", productos: orden});
         })
         .catch(function(error){
             console.log(error);
@@ -27,13 +27,13 @@ const productController = {
             include: [
                 {association:'usuario'},
                 {association:'comentarios',
-                include:[{association:'usuario'}],
-                order:[['created_at', 'DESC']]}
+                include:[{association:'usuario'}]}
             ]
         })
         .then(function(data){
             let comments= data.comentarios;
-            return res.render('product', {product: data, comments:comments})
+            let orden=comments.reverse(); //lo puse así porque agregando order: [["created_at", "DESC"]] no hace nada
+            return res.render('product', {product: data, comments:orden})
         })
         .catch(function(error){
             console.log(error);

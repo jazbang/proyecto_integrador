@@ -29,7 +29,8 @@ const commentController = {
             })
                 .then(function(data){
                     let comments= data.comentarios;
-                    return res.render('product', {product: data, comments:comments,errors:errors.mapped()})
+                    let orden=comments.reverse(); //lo puse así porque agregando order: [["created_at", "DESC"]] no hace nada
+                    return res.render('product', {product: data, comments:orden,errors:errors.mapped()})
                 })
                 .catch(function(error){
                     console.log(error);

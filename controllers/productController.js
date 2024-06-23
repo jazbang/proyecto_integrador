@@ -82,16 +82,16 @@ const productController = {
                 console.log(error);
             });   
     },
-    //editProduct:function(req,res){
-    //    let id = req.params.id
-    //    producto.findByPk(id)
-    //    .then(function(result){
-    //        return res.render('editProduct', {product: result});
-    //    })
-    //    .catch(function(error){
-    //       console.log(error);
-    //   }) 
-    //},
+    editProduct:function(req,res){
+        let id = req.params.id
+        producto.findByPk(id)
+        .then(function(result){
+           return res.render('editProduct', {product: result});
+        })
+        .catch(function(error){
+           console.log(error);
+       }) 
+    },
     //editProcess: function(req,res){
     //    if (req.body.editar){
     //        let errors= validationResult(req);

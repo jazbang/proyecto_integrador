@@ -114,7 +114,7 @@ const productController = {
     //    }
     //},
     del:function(req,res){
-        if (req.body.borrar){
+        if (req.body.id){
             let idProducto = req.body.id;
             let filtro = {
                 where: [{id: idProducto}]

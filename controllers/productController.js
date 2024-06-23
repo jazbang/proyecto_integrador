@@ -76,7 +76,7 @@ const productController = {
         }
         producto.findAll(filtrado)
             .then(function(resultados){
-                return res.render('search-results', {title: `Resultados de la búsqueda: ${busqueda}`, productos: resultados})
+                return res.render('search-results', {title: `Resultados de la búsqueda: ${busqueda}`, productos: resultados.reverse()})
             })
             .catch(function(error){
                 console.log(error);

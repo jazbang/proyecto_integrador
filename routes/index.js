@@ -21,11 +21,11 @@ router.get('/', productController.index);
 
 router.get('/product/:id', productController.products);
 
-router.get('product/editProduct/:id', productController.editProduct)
-router.post('product/editProduct/:id', productAddValidations, productController.editProcess) 
+//router.get('product/editProduct/:id', productController.editProduct)
+//router.post('product/editProduct/:id', productAddValidations, productController.editProcess) 
 
 
-router.post('/product/:id', productController.del)
+router.post('/product/delete', productController.del)
 
 
 router.get('/add', productController.productAdd);

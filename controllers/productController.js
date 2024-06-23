@@ -82,44 +82,44 @@ const productController = {
                 console.log(error);
             });   
     },
-    editProduct:function(req,res){
-        let id = req.params.id
-        producto.findByPk(id)
-        .then(function(result){
-            //return res.send(result)
-            return res.render('editProduct', {product: result});
-        })
-        .catch(function(error){
-            console.log(error);
-        }) 
-    },
-    editProcess: function(req,res){
-        if (req.body.editar){
-            let errors= validationResult(req);
-                if(errors.isEmpty()){
-                    producto.update(req.body, {
-                        imagen: req.body.imagen,
-                        nombre:req.body.product,
-                        descripcion:req.body.descripcion
-                    },
-                    {where:{id:id}})
-                    .then(function(resultados){
-                        res.redirect('/product') 
-                    })
-                    .catch(function(error){
-                        console.log(error);
-                    }); 
-                } else{
-                    return res.render('editProduct', { product: result, errors:errors.mapped() }); 
-                } 
-        }
-    },
+    //editProduct:function(req,res){
+    //    let id = req.params.id
+    //    producto.findByPk(id)
+    //    .then(function(result){
+    //        return res.render('editProduct', {product: result});
+    //    })
+    //    .catch(function(error){
+    //       console.log(error);
+    //   }) 
+    //},
+    //editProcess: function(req,res){
+    //    if (req.body.editar){
+    //        let errors= validationResult(req);
+    //            if(errors.isEmpty()){
+    //                producto.update(req.body, {
+    //                    imagen: req.body.imagen,
+    //                    nombre:req.body.product,
+    //                    descripcion:req.body.descripcion
+    //               },
+    //                {where:{id:id}})
+    //                .then(function(resultados){
+    //                    res.redirect('/product') 
+    //                })
+    //                .catch(function(error){
+    //                    console.log(error);
+    //                }); 
+    //            } else{
+    //                return res.render('editProduct', { product: result, errors:errors.mapped() }); 
+    //            } 
+    //    }
+    //},
     del:function(req,res){
         if (req.body.borrar){
-            let id= req.params.id;
-            producto.destroy(
-                {where:[{id:id}]}
-            )
+            let idProducto = req.body.id;
+            let filtro = {
+                where: [{id: idProducto}]
+            }
+            producto.destroy(filtro)
             .then(function(result){
                     return res.redirect('/')
             })

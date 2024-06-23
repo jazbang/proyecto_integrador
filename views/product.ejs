@@ -24,7 +24,8 @@
 			</p>
 			<p class="product-detail-description">
 				<% if (locals.user && locals.user.id == product.id_usuarios) { %>
-					<form class="form" action="/product/<%= product.id %>" method="post">
+					<form class="form" action="/product/delete" method="post">
+						<input type="hidden" name="id" value="<%= product.id %>">
 						<button type="submit" name="borrar" id="borrar">Borrar</button>
 					</form>
 				<% } %>

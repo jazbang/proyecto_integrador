@@ -7,37 +7,23 @@ let {validationResult} = require('express-validator');
 
 const usersController = {
     profileProcess: function(req,res){
-        let userId= req.params.id
-        user.findByPk(userId,{
-            include:[{
-                association:'productos',
-                order:[['created_at', 'DESC']]
-            }]
+        let email= req.session.email
+        let filtrado = {
+            where: {email: email},
+            include:[
+                {association:'productos',
+                include:{association:'comentarios'}}
+            ],
+            order:[['created_at', 'DESC']]
+        }
+        user.findOne(filtrado)
+        .then(function(results){
+            let productos= results.productos;
+            return res.render('profile', {productos: productos.reverse()})
         })
-        .then(function(usuario){
-            return res.render("profile", { usuario: usuario })
+        .catch(function(error){
+            return console.log(error)
         })
-        .catch(function(erorrs){
-            console.log(erorrs);
-        })
-        //let filtrado = {
-        //    include:[
-        //        {association:'productos'}
-        //    ],
-        //    where: {id: userId},
-        //    order:[['created_at', 'DESC']]
-        //}
-        //user.findAll(filtrado)
-        //.then(function(results){
-        //    if (results){
-        //        return res.render('profile', {productos: results})
-        //    } else{
-        //        return res.render('profile')
-        //    }
-        //})
-        //.catch(function(error){
-        //    return console.log(error)
-        //})
     },
     register: function(req,res){
         return res.render('register');
@@ -77,6 +63,7 @@ const usersController = {
             })
             .then(function(usuarioEncontrado){
                 req.session.user = usuarioEncontrado
+                req.session.email= usuarioEncontrado.email
 
                 if(req.body.recordarme != undefined){
                     res.cookie('recordarme',usuarioEncontrado.email, {maxAge:24*60*60*1000})

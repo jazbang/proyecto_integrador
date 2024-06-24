@@ -117,14 +117,38 @@ const productController = {
         if (req.body.id){
             let idProducto = req.body.id;
             let filtro = {
-                where: [{id: idProducto}]
+                where: {id: idProducto}
             }
-            producto.destroy(filtro)
-            .then(function(result){
-                    return res.redirect('/')
+            producto.findByPk(idProducto, {
+                include:[{association: 'comentarios'}]
             })
-            .catch(function(error){
-                console.log(error);
+            .then(function(resultados){
+                if(resultados.comentarios!== undefined){
+                    db.Comentario.destroy({
+                        where: { id_productos: idProducto }})
+                    .then(function(result){
+                        producto.destroy(filtro)
+                        .then(function(result){
+                            return res.redirect('/')
+                        })
+                        .catch(function(error){
+                            console.log(error);
+                        })
+                    })
+                    .catch(function(error){
+                        console.log(error);
+                    })
+
+                } else{
+                    producto.destroy(filtro)
+                    .then(function(result){
+                        return res.redirect('/')
+                    })
+                    .catch(function(error){
+                        console.log(error);
+                    })
+
+                }
             })
         }
     }

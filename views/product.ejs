@@ -16,7 +16,19 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= product.nombre %></h2> 
 			<p class="product-detail-description">
-				<a href="/editProduct/<%= product.id %>">Editar</a>
+				<% if (locals.user && locals.user.id == product.id_usuarios) { %>
+					<form class="form" action="/product/editProduct/<%= product.id %>" method="post" >
+						<button type="submit" name="editar" id="editar">Editar</button>
+					</form>
+				<% } %>
+			</p>
+			<p class="product-detail-description">
+				<% if (locals.user && locals.user.id == product.id_usuarios) { %>
+					<form class="form" action="/product/delete" method="post">
+						<input type="hidden" name="id" value="<%= product.id %>">
+						<button type="submit" name="borrar" id="borrar">Borrar</button>
+					</form>
+				<% } %>
 			</p>
 		</div>
 		<div class="product-detail">

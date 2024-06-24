@@ -7,21 +7,19 @@ let {validationResult} = require('express-validator');
 
 const usersController = {
     profileProcess: function(req,res){
-        let userId= req.session.id
+        let email= req.session.email
         let filtrado = {
+            where: {email: email},
             include:[
-                {association:'productos'}
+                {association:'productos',
+                include:{association:'comentarios'}}
             ],
-            where: {id: userId},
             order:[['created_at', 'DESC']]
         }
-        user.findAll(filtrado)
+        user.findOne(filtrado)
         .then(function(results){
-            if (results){
-                return res.render('profile', {productos: results})
-            } else{
-                return res.render('profile')
-            }
+            let productos= results.productos;
+            return res.render('profile', {productos: productos.reverse()})
         })
         .catch(function(error){
             return console.log(error)
@@ -65,6 +63,7 @@ const usersController = {
             })
             .then(function(usuarioEncontrado){
                 req.session.user = usuarioEncontrado
+                req.session.email= usuarioEncontrado.email
 
                 if(req.body.recordarme != undefined){
                     res.cookie('recordarme',usuarioEncontrado.email, {maxAge:24*60*60*1000})
@@ -89,8 +88,8 @@ const usersController = {
         let id = req.session.user.id
         let filtrado = {
             include : [
-                {association : "productos", },
-                {association: "comentarios", }
+                {association : "productos"},
+                {association: "comentarios"}
             ],
         }
         db.Usuario.findByPk(id, filtrado).then((result) => {

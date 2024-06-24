@@ -16,22 +16,21 @@
 				<h2 class="products-title">Editar producto</h2>
 			</div>
 			<h2 class="col-12"> 
-				<form action="/users/add" method="post">
+				<form action="users/add" method="post">
 					<label for="imagen">Imagen:</label><br>
-					<input type="file" id="imagen" name="imagen" required><br>
+					<input type="text" id="imagen" name="imagen" value='<%=product.imagen%>'required><br>
 
-					<label for="product">Producto:</label><br>
-					<input type="text" id="product" name="product" required><br>
+					<label for="nombre">Producto:</label><br>
+					<input type="text" id="nombre" name="nombre" value='<%=product.nombre%>'  required><br>
 
 					<label for="descripcion">Descripción:</label><br>
-					<input type="text" id="descripcion" name="descripcion" required><br>
+					<input type="text" id="descripcion" name="descripcion" value='<%=product.descripcion%>' required><br>
 
-					<input type="submit" value="Agregar productos">
+					<button type="submit">Editar producto</button>
+                    <input type="hidden" name="id_usuario" value="<%= product.id %>">
+                    </div>
 				</form>
 			</h2>
-
-			<!-- Show the "ultimos" products -->
-			<%-  include('./partials/ultimosProductos')%>
 		</div>
 	</div>
 

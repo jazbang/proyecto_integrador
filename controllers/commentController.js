@@ -11,7 +11,31 @@ const commentController = {
                 id_usuarios: req.session.user.id, 
                 comentario: req.body.comentario
             })
-            res.redirect(`/product/${req.params.id}`)
+                .then(function(results){
+                    res.redirect(`/product/${req.params.id}`);
+                })
+                .catch(function(error){
+                    console.log(error);
+                });
+        }else{
+            db.Product.findOne({
+                where:{id:req.params.id},
+                include: [
+                    {association:'usuario'},
+                    {association:'comentarios',
+                    include:[{association:'usuario'}],
+                    order:[['created_at', 'DESC']]}
+                ]
+            })
+                .then(function(data){
+                    let comments= data.comentarios;
+                    let orden=comments.reverse(); //lo puse así porque agregando order: [["created_at", "DESC"]] no hace nada
+                    return res.render('product', {product: data, comments:orden,errors:errors.mapped()})
+                })
+                .catch(function(error){
+                    console.log(error);
+                });
+      
         }
     }
 }

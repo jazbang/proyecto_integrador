@@ -25,9 +25,8 @@
 				<div>
 					<ul class="">
 						<%= user.email %>
-						<li>8 productos</li>
+						<li> <%= productos.length %> productos</li>
 						<li>200 seguidores</li>
-						<li>300 comentarios</li>
 					</ul>
 				</div>
 			</div>
@@ -38,33 +37,28 @@
 	<!-- Mis productos -->
 	<div class="container products-wrapper">
 		<div class="row">
-			<div class="col-12">
-				<% if (productos.results && productos.length > 0) { %>
-					<% let contador = 0; %>
-					<% for (let i = 0; i < productos.length; i++) { %>
-						<% contador= contador+1 %>
-					<% } %>
-					<h2 class="products-title"> Cantidad de productos cargados: <%=contador%></h2>
-				<%}else {%>
-					<h2> No hay ningun producto cargado</h2>
-				<%}%>
-			</div>
 			<!-- Show mis productos -->
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<% for(let i=0; i<productos.length; i++){%>
-						<a href="/product">
+			<% for (let i = 0; i < productos.length; i++){ %>
+				<div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<a href="/product/<%= productos[i].id %>">
 							<figure class="product-box_image">
-								<img src=<%=productos[i].imagen%> alt="<%=productos[i].nombre%>">
+								<img src="<%= productos[i].imagen %>" alt="">
 							</figure>
 							<article class="product-box_data">
-								<a href='/product/id'><h2><%=productos[i].nombre%></h2></a>
-								<!-- <p>Comentarios: 12</p> -->
-							</article>
+								<h2>
+									<%= productos[i].nombre %>
+								</h2>
+								<p>
+									<%= productos[i].descripcion %>
+								</p> 
+								 <p>Comentarios: <%= productos[i].comentarios.length %> </p> 
+			
+							</article> 
 						</a>
-					<%}%> 
-				</section>
-			</div>
+					</section>
+				</div>
+			<%}%>
 		</div>
 	</div>
 	<!-- /Mis productos -->

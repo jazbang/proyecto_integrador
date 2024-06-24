@@ -11,7 +11,6 @@ let productAddValidations=[
     body('product')
         .notEmpty().withMessage('Por favor agregar el nombre del producto')
         .isString().withMessage('Por favor complete el campo del nombre del producto'),
-        //agregar de tipo texto y el custom para que no se repitan los nombres de usuarios
     body('descripcion')
         .notEmpty().withMessage('Por favor agregar una descripción del producto')
         .isString().withMessage('Por favor complete con el campo con el nombre del archivo'),

@@ -44,7 +44,6 @@ app.use(function(req, res, next){
     })
       .then(function(user){
         req.session.user = user;
-        req.session.email= usuarioEncontrado.email;
         res.locals.user = user;
         return next();
       })

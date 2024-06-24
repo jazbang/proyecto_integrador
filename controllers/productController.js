@@ -97,7 +97,7 @@ const productController = {
         let filtrado = {
             include : [
                 {association : "usuario"},
-            ],
+            ]
         }
         producto.findByPk(idProduct, filtrado) //me trae el usuario que cargo el producto
         .then(function(result){

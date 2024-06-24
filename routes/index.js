@@ -17,12 +17,13 @@ let productAddValidations=[
         .isString().withMessage('Por favor complete con el campo con el nombre del archivo'),
 ];
 
+
 router.get('/', productController.index);
 
 router.get('/product/:id', productController.products);
 
 router.get('/editProduct/:id', productController.editProduct);
-//router.post('product/editProduct/:id', productAddValidations, productController.editProcess) 
+router.post('/editProduct/:id', productAddValidations, productController.editProcess) 
 
 
 router.post('/product/delete', productController.del)

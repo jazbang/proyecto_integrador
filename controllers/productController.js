@@ -82,16 +82,6 @@ const productController = {
                 console.log(error);
             });   
     },
-    //editProduct:function(req,res){
-    //    let id = req.params.id
-    //    producto.findByPk(id)
-    //    .then(function(result){
-    //       return res.render('editProduct', {product: result});
-    //    })
-    //    .catch(function(error){
-    //       console.log(error);
-    //   }) 
-    //},
     editProduct: function(req, res, next) {
         let idProduct = req.params.id // me trae el id del producto
         let filtrado = {
@@ -111,26 +101,30 @@ const productController = {
             console.log(error);
         }) 
     },
-   //editProcess: function(req,res){
-    //    if (req.body.editar){
-    //        let errors= validationResult(req);
-    //           if(errors.isEmpty()){
-    //                let productoEdiatdo= {
-    //                    imagen: req.body.imagen,
-    //                    nombre:req.body.product,
-    //                    descripcion:req.body.descripcion}
-    //                producto.update(productoEditado,{where:[{id:req.body.id}]}) 
-    //                .then(function(resultados){
-    //                    res.redirect('/product') 
-    //                })
-    //                .catch(function(error){
-    //                    console.log(error);
-    //                }); 
-    //            } else{
-    //                return res.render('editProduct', { product: result, errors:errors.mapped() }); 
-    //            } 
-    //    }
-    //},
+   editProcess: function(req,res){
+        let errors= validationResult(req);
+        if(errors.isEmpty()){
+            let idProduct = req.params.id // me trae el id del producto
+            let productoEditado= {
+                imagen: req.body.imagen,
+                nombre:req.body.product,
+                descripcion:req.body.descripcion}
+            let filtrado ={
+                where:{
+                    id:idProduct
+                }
+            }
+            producto.update(productoEditado, filtrado) 
+            .then(function(resultados){
+                res.redirect('/product') 
+            })
+            .catch(function(error){
+                console.log(error);
+            }); 
+        } else{
+            return res.render('editProduct', { product: req.body, errors:errors.mapped() }); 
+        } 
+    },
     del:function(req,res){
         if (req.body.id){
             let idProducto = req.body.id;

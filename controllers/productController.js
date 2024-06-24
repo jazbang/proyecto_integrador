@@ -82,26 +82,44 @@ const productController = {
                 console.log(error);
             });   
     },
-    editProduct:function(req,res){
-        let id = req.params.id
-        producto.findByPk(id)
+    //editProduct:function(req,res){
+    //    let id = req.params.id
+    //    producto.findByPk(id)
+    //    .then(function(result){
+    //       return res.render('editProduct', {product: result});
+    //    })
+    //    .catch(function(error){
+    //       console.log(error);
+    //   }) 
+    //},
+    editProduct: function(req, res, next) {
+        let idProduct = req.params.id // me trae el id del producto
+        let filtrado = {
+            include : [
+                {association : "usuario"},
+            ],
+        }
+        producto.findByPk(idProduct, filtrado) //me trae el usuario que cargo el producto
         .then(function(result){
-           return res.render('editProduct', {product: result});
+            if(!result){ // esto ya se verifica en la vista
+                res.send('No puede editar este producto')
+            } else{
+                return res.render('editProduct', {product: result}); // me redirige a la vista para que pueda editar el producto
+            }
         })
         .catch(function(error){
-           console.log(error);
-       }) 
+            console.log(error);
+        }) 
     },
-    //editProcess: function(req,res){
+   //editProcess: function(req,res){
     //    if (req.body.editar){
     //        let errors= validationResult(req);
-    //            if(errors.isEmpty()){
-    //                producto.update(req.body, {
+    //           if(errors.isEmpty()){
+    //                let productoEdiatdo= {
     //                    imagen: req.body.imagen,
     //                    nombre:req.body.product,
-    //                    descripcion:req.body.descripcion
-    //               },
-    //                {where:{id:id}})
+    //                    descripcion:req.body.descripcion}
+    //                producto.update(productoEditado,{where:[{id:req.body.id}]}) 
     //                .then(function(resultados){
     //                    res.redirect('/product') 
     //                })

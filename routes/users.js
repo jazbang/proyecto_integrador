@@ -83,7 +83,7 @@ let editValidations = [
     body("user")
         .notEmpty().withMessage("Por favor, complete el campo usuario."),
 
-    body("fecha")
+    body("nacimiento")
         .notEmpty().withMessage("Por favor, seleccione su fecha de nacimiento.")
         .isDate().withMessage("Por favor, ingrese una fecha válida."),
 
@@ -93,7 +93,6 @@ let editValidations = [
 
     body("profile")
         .notEmpty().withMessage("Por favor, complete el campo de foto de perfil.")
-        .isURL().withMessage("Por favor, ingrese una URL válida para la foto de perfil.")
 ];
 
 

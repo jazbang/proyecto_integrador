@@ -107,8 +107,8 @@ const usersController = {
             let usuario = {
                 email: req.body.email,
                 username: req.body.user,
-                contrasenia: bcrypt.hashSync(req.body.contrasenia, 10),
-                nacimiento: req.body.nacimiento,
+                contrasenia: bcrypt.hashSync(req.body.password, 10),
+                nacimiento: req.body.fecha,
                 dni: req.body.dni,
                 foto: req.body.profile 
             }

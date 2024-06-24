@@ -26,31 +26,31 @@
                     <% } %>
                     
                     <label for="user">Usuario:</label><br>
-                    <input type="text" id="user" name="user" value="<%= (locals.old && locals.old.user !== undefined) ? locals.old.user : (user && user.user) %>" required><br>
+                    <input type="text" id="user" name="user" value="<%= (locals.old && locals.old.user !== undefined) ? locals.old.user : (user && user.username) %>"><br>
                     <% if (locals.errors && locals.errors.user) { %>
                         <p class="error-msg"><%= locals.errors.user.msg %></p><br>
                     <% } %>
             
                     <label for="password">Contraseña:</label><br>
-                    <input type="password" id="password" name="password" required><br>
+                    <input type="password" id="password" name="password"><br>
                     <% if (locals.errors && locals.errors.password) { %>
                         <p class="error-msg"><%= locals.errors.password.msg %></p><br>
                     <% } %>
             
                     <label for="nacimiento">Fecha de nacimiento:</label><br>
-                    <input type="date" id="nacimiento" name="nacimiento" value="<%= (locals.old && locals.old.nacimiento !== undefined) ? locals.old.nacimiento : (user && user.nacimiento) %>" required><br>
+                    <input type="date" id="nacimiento" name="nacimiento" value="<%= (locals.old && locals.old.nacimiento !== undefined) ? locals.old.nacimiento : (user && user.fecha) %>"><br>
                     <% if (locals.errors && locals.errors.nacimiento) { %>
                         <p class="error-msg"><%= locals.errors.nacimiento.msg %></p><br>
                     <% } %>
             
                     <label for="dni">DNI:</label><br>
-                    <input type="number" id="dni" name="dni" value="<%= (locals.old && locals.old.dni !== undefined) ? locals.old.dni : (user && user.dni) %>" required><br>
+                    <input type="number" id="dni" name="dni" value="<%= (locals.old && locals.old.dni !== undefined) ? locals.old.dni : (user && user.dni) %>"><br>
                     <% if (locals.errors && locals.errors.dni) { %>
                         <p class="error-msg"><%= locals.errors.dni.msg %></p><br>
                     <% } %>
             
                     <label for="profile">Foto de perfil (URL):</label><br>
-                    <input type="text" id="profile" name="profile" value="<%= (locals.old && locals.old.profile !== undefined) ? locals.old.profile : (user && user.profile) %>" required><br>
+                    <input type="text" id="profile" name="profile" value="<%= (locals.old && locals.old.profile !== undefined) ? locals.old.profile : (user && user.foto) %>" ><br>
                     <% if (locals.errors && locals.errors.profile) { %>
                         <p class="error-msg"><%= locals.errors.profile.msg %></p><br>
                     <% } %>

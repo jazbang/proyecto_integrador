@@ -10,7 +10,7 @@ const productController = {
             include: [
                 {association: "comentarios"},
                 {association: "usuario"}
-              ]
+            ]
         }
         producto.findAll(filtrado)
         .then(function(results){
@@ -71,7 +71,8 @@ const productController = {
                 nombre: {[db.Sequelize.Op.like]: "%" + busqueda + "%"}
             },
             include: [
-                {association: 'comentarios'}
+                {association: 'comentarios'},
+                {association: 'usuario'}
             ]
         }
         producto.findAll(filtrado)

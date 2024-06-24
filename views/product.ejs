@@ -38,7 +38,7 @@
 					<p class="product-detail-description">
 						<%= product.descripcion %></p>
 						<% if (product.usuario) { %>
-							<h2>Usuario que cargó el producto: <a href="profile"> <%= product.usuario.username%> </a></h2>
+							<h2>Usuario que cargó el producto: <a href="/users/profile/<%= product.usuario.id %>"> <%= product.usuario.username%> </a></h2>
 						<% } else { %>
 							<h2>Usted cargo este producto.</h2>
 						<% } %>

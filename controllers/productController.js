@@ -108,7 +108,8 @@ const productController = {
             let productoEditado= {
                 imagen: req.body.imagen,
                 nombre:req.body.product,
-                descripcion:req.body.descripcion}
+                descripcion:req.body.descripcion,
+                id_usuarios: req.session.user.id}
             let filtrado ={
                 where:{
                     id:idProduct
@@ -116,13 +117,22 @@ const productController = {
             }
             producto.update(productoEditado, filtrado) 
             .then(function(resultados){
-                res.redirect('/product') 
+                res.redirect(`/product/${req.params.id}`) 
             })
             .catch(function(error){
                 console.log(error);
             }); 
         } else{
-            return res.render('editProduct', { product: req.body, errors:errors.mapped() }); 
+            producto.findOne({
+                where:{id:req.params.id},
+            })
+            .then(function(data){
+                return res.render('editProduct', { product:data, errors:errors.mapped(),old: req.body}); 
+            })
+            .catch(function(error){
+                console.log(error);
+            });
+            
         } 
     },
     del:function(req,res){

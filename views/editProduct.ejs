@@ -16,15 +16,15 @@
 				<h2 class="products-title">Editar producto</h2>
 			</div>
 			<h2 class="col-12"> 
-				<form action="/product/editProduct/<%= product.id %>"  method="post">
+				<form action="/editProduct/<%= product.id %>?editar="  method="post">
 					<label for="imagen">Imagen:</label><br>
-					<input type="text" id="imagen" name="imagen" value="<%= product.imagen %>" required><br>
+					<input type="text" id="imagen" name="imagen" value="<%= (locals.old && locals.old.imagen !== undefined) ? locals.old.imagen : (product && product.imagen) %>" ><br>
 
 					<label for="product">Producto:</label><br>
-					<input type="text" id="product" name="product"  value="<%= product.nombre %>"  required><br>
+					<input type="text" id="product" name="product"  value="<%= (locals.old && locals.old.nombre !== undefined) ? locals.old.nombre : (product && product.nombre) %>"  ><br>
 
 					<label for="descripcion">Descripción:</label><br>
-					<input type="text" id="descripcion" name="descripcion" value="<%= product.descripcion %>" required><br>
+					<input type="text" id="descripcion" name="descripcion" value="<%= (locals.old && locals.old.descripcion !== undefined) ? locals.old.descripcion : (product && product.descripcion) %>" ><br>
 
 					<button type="submit">Editar producto</button>
                     <input type="hidden" name="id_usuario" >

@@ -7,23 +7,39 @@ let {validationResult} = require('express-validator');
 
 const usersController = {
     profileProcess: function(req,res){
-        let email= req.session.email
-        let filtrado = {
-            where: {email: email},
+        let idUser=req.params.id;
+        let filtrado={
+            where:{id:idUser},
             include:[
-                {association:'productos',
-                include:{association:'comentarios'}}
-            ],
-            order:[['created_at', 'DESC']]
+                    {association:'productos',
+                    include:{association:'comentarios'}}
+            ]
         }
+
         user.findOne(filtrado)
-        .then(function(results){
-            let productos= results.productos;
-            return res.render('profile', {productos: productos.reverse()})
-        })
-        .catch(function(error){
-            return console.log(error)
-        })
+            .then(function(results){
+                let productos= results.productos;
+                return res.render('profile', {usuario: results, productos: productos.reverse()})
+            })
+            .catch(function(error){
+                return console.log(error)
+            })
+        //let email= req.session.email
+        //let filtrado = {
+            //where: {email: email},
+            //include:[
+                //{association:'productos',
+                //include:{association:'comentarios'}}
+            //]
+        //}
+        //user.findOne(filtrado)
+        //.then(function(results){
+            //let productos= results.productos;
+            //return res.render('profile', {productos: productos.reverse()})
+        //})
+        //.catch(function(error){
+            //return console.log(error)
+        //})
     },
     register: function(req,res){
         return res.render('register');

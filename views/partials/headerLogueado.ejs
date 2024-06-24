@@ -33,9 +33,11 @@
 			</ul>
 	
 			<ul class="right-navbar">
-				<li>Bienvenido <a href="/users/profile"><%=locals.user.username%> <i class="fas fa-user"></i></a></li>
+				<% if (locals.user!==undefined) {%>
+					<li>Bienvenido <a href="/users/profile/<%=user.id%>"><%=user.username%> <i class="fas fa-user"></i></a></li>
 						
-				<li>
+					<li>
+				<%} %>
 					<form action="/users/logout" method="post">
 						<button class="logout" type="submit">
 							Cerrar sesión <i class="fas fa-sign-in-alt"></i>

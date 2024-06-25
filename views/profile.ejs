@@ -16,10 +16,12 @@
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title"><%= usuario.username %>
-						<% if (usuario.id==user.id) {%>
-							<a href="/users/edit">
-								<i class="fas fa-cog"></i>
-							</a>
+						<% if (locals.user!==undefined) { %>
+							<% if (usuario.id==user.id) {%>
+								<a href="/users/edit">
+									<i class="fas fa-cog"></i>
+								</a>
+							<% } %>
 						<% } %>
 					</h1>
 					<a class="btn mt-3 ml-4" href="">SEGUIR</a>

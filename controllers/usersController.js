@@ -113,7 +113,17 @@ const usersController = {
             }
             user.update(usuario, filtrado)
             .then((result) => {
-                return res.redirect('/')
+                user.findOne({
+                    where:{email:usuario.email}
+                })
+                    .then(function(usuarioActualizado){
+                        req.session.user=usuarioActualizado;
+                        return res.redirect('/');
+                    })
+                    .catch(function(error){
+                        console.log(error);
+                    });
+                
             })
             .catch((err) => {
                 return console.log(err);

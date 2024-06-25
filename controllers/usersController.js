@@ -37,8 +37,8 @@ const usersController = {
                 email: req.body.email,
                 username:req.body.username,
                 contrasenia:passEncriptada,
-                dni:req.body.dni ,
-                foto:req.body.foto ,
+                dni:req.body.dni,
+                foto:req.body.foto,
                 fecha:req.body.fecha 
             })
             return res.redirect('/')

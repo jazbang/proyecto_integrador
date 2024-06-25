@@ -6,11 +6,7 @@
 
 <body>
     <!-- Header -->
-    <% if (locals.user != undefined || locals.recordarme != undefined) { %> 
-        <%- include('./partials/headerLogueado') %>
-    <% } else { %>
-        <%- include('./partials/header') %>
-    <% } %>
+    <%- include('./partials/headerLogueado') %>
     <!-- /Header -->
 
     <!-- Novedades -->
@@ -49,7 +45,7 @@
                         <p class="error-msg"><%= locals.errors.dni.msg %></p><br>
                     <% } %>
             
-                    <label for="profile">Foto de perfil (URL):</label><br>
+                    <label for="profile">Foto de perfil:</label><br>
                     <input type="text" id="profile" name="profile" value="<%= (locals.old && locals.old.profile !== undefined) ? locals.old.profile : (user && user.foto) %>" ><br>
                     <% if (locals.errors && locals.errors.profile) { %>
                         <p class="error-msg"><%= locals.errors.profile.msg %></p><br>

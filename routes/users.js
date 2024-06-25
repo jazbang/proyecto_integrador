@@ -22,7 +22,7 @@ let registerValidations=[
         }),
     body('username')
         .notEmpty().withMessage('Por favor complete el campo con su nombre de usuario')
-        .isString().withMessage('El campo debe ser de tipo texto')
+        .isString().withMessage('El campo de usuario debe ser de tipo texto')
         .custom(function(value){ 
             return db.Usuario.findOne({
                 where: {username: value},
@@ -37,9 +37,9 @@ let registerValidations=[
         .notEmpty().withMessage('Por favor complete el campo con su contraseña')
         .isLength({ min: 4 }).withMessage('Su contraseña debe tener al menos 4 caracteres'),
     body('dni')
-        .isInt().withMessage('Por favor complete el campo con numeros enteros'),
+        .isInt().withMessage('Por favor complete el campo dni con numeros enteros'),
     body('foto')
-        .isString().withMessage('El campo debe ser de tipo texto'),
+        .isString().withMessage('El campo foto debe ser de tipo texto'),
 ];
 
 let loginValidations= [
